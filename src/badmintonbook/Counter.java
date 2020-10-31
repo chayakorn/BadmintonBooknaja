@@ -92,13 +92,25 @@ public class Counter {
     }
 
     public void checkOut() {
-        String CustomerName = getNameFromKeyboard(input);
-        String CustomerTel = getTelNumberFromKeyboard(input);
+        String name =getNameFromKeyboard(input);
+        String tel = getTelNumberFromKeyboard(input);
+//        for(int i = 0 ; i < court.length;i++){
+//            if(court[i].getCustomerName()==name && court[i].getTelCustomer()==tel){
+//                court[i].reset();
+//                
+//                break;
+//            }
+//        }
         for (int i = 0; i < court.length; i++) {
-            if (court[i].getCustomerName() == CustomerName && court[i].getTelCustomer() == CustomerTel) {// gu tum mai sed i sus yed mae
-                court[i].checkOut();
+            if (name.equals(court[i].getCustomerName()) && tel.equals(court[i].getTelCustomer())) {
+                court[i].checkOutCourt();
+                court[i].toggleLight();
+                break;
+
             }
+            
         }
+            
     }
 
     public String getNameFromKeyboard(Scanner input) {
@@ -139,10 +151,9 @@ public class Counter {
         n.calculate(a);
 
         System.out.println(n.getCourtStat());
-        n.calculate(a);
-        System.out.println(n.getCourtStat());
         n.checkOut();
         System.out.println(n.getCourtStat());
+        
     }
 
 }

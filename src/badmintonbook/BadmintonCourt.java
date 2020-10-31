@@ -49,11 +49,14 @@ public class BadmintonCourt {
         }
 
     }
-    public void checkOut(){
-        bookStatus=false;
-        light = false;
-        CustomerName = null;
-        TelCustomer = null;
+    public void checkOutCourt(){
+        if(bookStatus){
+            bookStatus = false;
+            CustomerName = null;
+            TelCustomer = null;
+        }else {
+            System.out.println("This Court is Checked out");
+        }
         
     }
 

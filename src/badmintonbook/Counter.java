@@ -31,13 +31,13 @@ public class Counter {
     }
 
     public void calculate(Scanner input) {
-        System.out.println("Intput Customer Hr: ");
+        System.out.print("Input Customer Hr : ");
         int hrCustomer = input.nextInt();
-        System.out.println("Input Customer Money:");
+        System.out.print("Input Customer Money :");
         double moneyFromCustomer = input.nextDouble();
         double price = hrCustomer * CourtCost;
         if (price > moneyFromCustomer) {
-            System.out.println("Your Money not Enough");
+            System.out.print("Your Money not Enough");
         } else if (moneyFromCustomer >= price) {
             double change = moneyFromCustomer - price;
             if (MoneyInCounter > change) {
@@ -45,6 +45,7 @@ public class Counter {
                 countCustomer++;
                 allIncome += price;
                 System.out.println("Change:" + change);
+                System.out.println(getCourtStat());
             } else {
                 System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
             }
@@ -114,28 +115,28 @@ public class Counter {
     }
 
     public String getNameFromKeyboard(Scanner input) {
-        System.out.print("input Customer name:");
+        System.out.print("input Customer name : ");
         return input.nextLine();
     }
 
     public String getTelNumberFromKeyboard(Scanner input) {
-        System.out.print("input Customer Telephone Number:");
+        System.out.print("input Customer Telephone Number : ");
         return input.nextLine();
     }
 
     public String getCourtStat() {
-        return "Court 1:" + court[0].toString()
-                + " Court 2:" + court[1].toString()
-                + " Court 3:" + court[2].toString()
-                + " Court 4:" + court[3].toString()
-                + " Court 5:" + court[4].toString()
-                + " Court 6:" + court[5].toString()
-                + " Court 7:" + court[6].toString()
-                + " Court 8:" + court[7].toString()
-                + " Court 9:" + court[8].toString()
-                + " Court 10:" + court[9].toString()
-                + " Court 11:" + court[10].toString()
-                + " Court 12:" + court[11].toString();
+        return "\nCourt 1:" + court[0].toString()
+                + " \nCourt 2:" + court[1].toString()
+                + " \nCourt 3:" + court[2].toString()
+                + " \nCourt 4:" + court[3].toString()
+                + " \nCourt 5:" + court[4].toString()
+                + " \nCourt 6:" + court[5].toString()
+                + " \nCourt 7:" + court[6].toString()
+                + " \nCourt 8:" + court[7].toString()
+                + " \nCourt 9:" + court[8].toString()
+                + " \nCourt 10:" + court[9].toString()
+                + " \nCourt 11:" + court[10].toString()
+                + " \nCourt 12:" + court[11].toString();
     }
 
     @Override

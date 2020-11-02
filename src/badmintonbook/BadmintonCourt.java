@@ -17,6 +17,7 @@ public class BadmintonCourt {
     private boolean bookStatus;
     private String name,CustomerName,TelCustomer = null;
     private Scanner input= new Scanner(System.in);
+    private StopWatch timer = new StopWatch();
 
 
     public BadmintonCourt(String name) {
@@ -43,6 +44,7 @@ public class BadmintonCourt {
             bookStatus = true;
             CustomerName= getNameFromKeyboard(input);
             TelCustomer = getTelNumberFromKeyboard(input);
+            timer.start();
             
         } else {
             System.out.println("This Court is Booked");
@@ -54,6 +56,7 @@ public class BadmintonCourt {
             bookStatus = false;
             CustomerName = null;
             TelCustomer = null;
+            timer.stop();
         }else {
             System.out.println("This Court is Checked out");
         }

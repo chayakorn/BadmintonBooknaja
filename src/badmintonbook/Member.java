@@ -32,4 +32,5 @@ public class Member {
         telnum = input.next();
     }
     
+    
 }

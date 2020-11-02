@@ -18,7 +18,7 @@ public class BadmintonBook {
     private static String memTel;
     private static String name;
     private static String menu = "\n####Menu####" + "\n1.Book\n2.Checkout\n\n0.Back";
-    private static String mainMenu = "\n####Counter####\n\n1.Guest\n2.Member\n3.Register\n\4.Check courts status\n\n0.Exit";
+    private static String mainMenu = "\n####Counter####\n\n1.Guest\n2.Member\n3.Register\n4.Check courts status\n\n0.Exit";
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {

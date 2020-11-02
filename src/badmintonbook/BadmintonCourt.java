@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class BadmintonCourt {
 
     private boolean light;
-    boolean bookStatus;
+    private boolean bookStatus;
     private String name,CustomerName,TelCustomer = null;
     private Scanner input= new Scanner(System.in);
 

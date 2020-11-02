@@ -5,6 +5,7 @@
  */
 package badmintonbook;
 
+import java.time.LocalTime;
 import java.util.Scanner;
 
 /**
@@ -21,6 +22,7 @@ public class Counter {
     private Scanner input = new Scanner(System.in);
     private StopWatch timer = new StopWatch();
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
+    private LocalTime time = LocalTime.now();
 
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
@@ -87,12 +89,12 @@ public class Counter {
                 break;
 
             }
-            
+
         }
     }
 
     public void checkOut() {
-        String name =getNameFromKeyboard(input);
+        String name = getNameFromKeyboard(input);
         String tel = getTelNumberFromKeyboard(input);
 //        for(int i = 0 ; i < court.length;i++){
 //            if(court[i].getCustomerName()==name && court[i].getTelCustomer()==tel){
@@ -108,9 +110,9 @@ public class Counter {
                 break;
 
             }
-            
+
         }
-            
+
     }
 
     public String getNameFromKeyboard(Scanner input) {
@@ -153,7 +155,7 @@ public class Counter {
         System.out.println(n.getCourtStat());
         n.checkOut();
         System.out.println(n.getCourtStat());
-        
+
     }
 
 }

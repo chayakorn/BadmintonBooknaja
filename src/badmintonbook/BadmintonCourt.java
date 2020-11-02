@@ -45,7 +45,6 @@ public class BadmintonCourt {
             CustomerName= getNameFromKeyboard(input);
             TelCustomer = getTelNumberFromKeyboard(input);
             timer.start();
-            
         } else {
             System.out.println("This Court is Booked");
         }

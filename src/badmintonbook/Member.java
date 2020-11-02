@@ -12,8 +12,9 @@ import java.util.Scanner;
  * @author Student
  */
 public class Member {
-    private static String name;
-    private static String telnum;
+    private  String name;
+    private  String telnum;
+    private  int points;
 
     
     public Member(){
@@ -25,12 +26,24 @@ public class Member {
     public String getTelnum(){
         return telnum;
     }
+    public int getPoints(){
+        return points;
+    }
     public void register0(Scanner input){
         System.out.println("Input your Name: ");
         name = input.next();
         System.out.println("Input your Telnumber: ");
         telnum = input.next();
     }
+    public void addPoints(int hr){
+        points+=hr*5;
+    }
+
+    @Override
+    public String toString() {
+        return "Member: " + name + ", Telnumber: " + telnum + ", Points:" + points;
+    }
+
     
     
 }

@@ -21,7 +21,8 @@ public class Counter {
     private Scanner input = new Scanner(System.in);
     private StopWatch timer = new StopWatch();
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
-
+    private Member[] member = new Member[1];
+    
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
     }
@@ -137,6 +138,28 @@ public class Counter {
                 + " Court 11:" + court[10].toString()
                 + " Court 12:" + court[11].toString();
     }
+    public void login(){
+        
+    }
+    public void register(){
+        
+        for(int i = 0;i<member.length;i++){
+            if(member[i]==null){
+                member[i].register0(input);
+                break;
+            }
+            if(member[i]!=null){
+                Member [] member1 = new Member[i+1];
+                for(int j = 0;j<member1.length;i++){
+                    member1[i]=member[i];
+                    
+                }
+                member1[i+1].register0(input);
+                member=member1;
+                
+            }
+        }
+    }
 
     @Override
     public String toString() {
@@ -146,13 +169,14 @@ public class Counter {
     public static void main(String[] args) {
         Scanner a = new Scanner(System.in);
         Counter n = new Counter(300);
-        n.addMoney(5000);
-        System.out.println(n);
-        n.calculate(a);
-
-        System.out.println(n.getCourtStat());
-        n.checkOut();
-        System.out.println(n.getCourtStat());
+//        n.addMoney(5000);
+//        System.out.println(n);
+//        n.calculate(a);
+//
+//        System.out.println(n.getCourtStat());
+//        n.checkOut();
+//        System.out.println(n.getCourtStat());
+        n.register();
         
     }
 

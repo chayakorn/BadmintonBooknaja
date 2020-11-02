@@ -16,11 +16,10 @@ public class Counter {
 
     private double MoneyInCounter;
     private int countCustomer = 0;
-    private int CourtCost = 100;
+    private final int CourtCost = 100;
     private double allIncome;
     private double allIncomeever[] = new double[100];
     private Scanner input = new Scanner(System.in);
-    private StopWatch timer = new StopWatch();
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private LocalTime time = LocalTime.now();
     private Member[] member = new Member[1];

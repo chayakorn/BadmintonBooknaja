@@ -17,7 +17,7 @@ public class BadmintonBook {
     private static int selectMenu;
     private static String name;
     private static String menuGuest = "Guest Menu" + "\n1.Book\n2.Checkout\n0.Exit";
-    private static String menu = "Welcome to BadmintonCourt\n1.Guest\n2.Member\n3.Register\n0.Exit";
+    private static String menu = "Courter\n1.Guest\n2.Member\n3.Register\n0.Exit";
 
     public static void main(String[] args) {
 

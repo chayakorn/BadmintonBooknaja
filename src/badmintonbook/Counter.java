@@ -21,6 +21,8 @@ public class Counter {
     private Scanner input = new Scanner(System.in);
     private StopWatch timer = new StopWatch();
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
+    private Member[] member = new Member[1];
+    private Member a = new Member();
 
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
@@ -33,11 +35,11 @@ public class Counter {
     public void calculate(Scanner input) {
         System.out.print("Input Customer Hr : ");
         int hrCustomer = input.nextInt();
-        System.out.print("Input Customer Money :");
+        System.out.print("Input Customer Money : ");
         double moneyFromCustomer = input.nextDouble();
         double price = hrCustomer * CourtCost;
         if (price > moneyFromCustomer) {
-            System.out.print("Your Money not Enough");
+            System.out.print("Your Money not Enough.");
         } else if (moneyFromCustomer >= price) {
             double change = moneyFromCustomer - price;
             if (MoneyInCounter > change) {
@@ -88,12 +90,12 @@ public class Counter {
                 break;
 
             }
-            
+
         }
     }
 
     public void checkOut() {
-        String name =getNameFromKeyboard(input);
+        String name = getNameFromKeyboard(input);
         String tel = getTelNumberFromKeyboard(input);
 //        for(int i = 0 ; i < court.length;i++){
 //            if(court[i].getCustomerName()==name && court[i].getTelCustomer()==tel){
@@ -106,12 +108,13 @@ public class Counter {
             if (name.equals(court[i].getCustomerName()) && tel.equals(court[i].getTelCustomer())) {
                 court[i].checkOutCourt();
                 court[i].toggleLight();
+                System.out.println(getCourtStat());
                 break;
 
             }
-            
+            System.out.println("You didn't booked.");
         }
-            
+
     }
 
     public String getNameFromKeyboard(Scanner input) {
@@ -139,6 +142,31 @@ public class Counter {
                 + " \nCourt 12:" + court[11].toString();
     }
 
+    public void login() {
+
+    }
+
+    public void register() {
+
+        for (int i = 0; i < member.length; i++) {
+            if (member[i] == null) {
+                member[i] = new Member();
+                member[i].register0(input);
+                break;
+            }
+            if (member[i] != null) {
+                Member[] member1 = new Member[i + 1];
+                for (int j = 0; j < member1.length; i++) {
+                    member1[i] = member[i];
+
+                }
+//                member1[i + 1].register0(input);
+//                member = member1;
+
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return "Counter{" + "MoneyInCounter=" + MoneyInCounter + ", countCustomer=" + countCustomer + ", allIncome=" + allIncome + ", input=" + input + '}';
@@ -147,14 +175,21 @@ public class Counter {
     public static void main(String[] args) {
         Scanner a = new Scanner(System.in);
         Counter n = new Counter(300);
-        n.addMoney(5000);
+//        n.addMoney(5000);
         System.out.println(n);
         n.calculate(a);
 
         System.out.println(n.getCourtStat());
-        n.checkOut();
+        n.calculate(a);
+
         System.out.println(n.getCourtStat());
-        
+        n.calculate(a);
+
+        System.out.println(n.getCourtStat());
+//        n.checkOut();
+//        System.out.println(n.getCourtStat());
+//        n.register();
+
     }
 
 }

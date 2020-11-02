@@ -45,7 +45,7 @@ public class BadmintonCourt {
             TelCustomer = getTelNumberFromKeyboard(input);
             
         } else {
-            System.out.println("This Court is Booked");
+            System.out.println("This Court is Booked.");
         }
 
     }
@@ -55,18 +55,18 @@ public class BadmintonCourt {
             CustomerName = null;
             TelCustomer = null;
         }else {
-            System.out.println("This Court is Checked out");
+            System.out.println("This Court is Checked out.");
         }
         
     }
 
     public String getNameFromKeyboard(Scanner input) {
-        System.out.print("input Customer name:");
+        System.out.print("input Customer name : ");
         return input.nextLine();
     }
 
     public String getTelNumberFromKeyboard(Scanner input) {
-        System.out.print("input Customer Telephone Number:");
+        System.out.print("input Customer Telephone Number : ");
         return input.nextLine();
     }
 

@@ -15,24 +15,25 @@ public class BadmintonBook {
 
     private static int selectGuest;
     private static int selectMenu;
+    private static String memTel;
     private static String name;
-    private static String menuGuest = "Guest Menu" + "\n1.Book\n2.Checkout\n0.Exit";
-    private static String menu = "Courter\n1.Guest\n2.Member\n3.Register\n0.Exit";
+    private static String menu = "\n####Menu####" + "\n1.Book\n2.Checkout\n\n0.Back";
+    private static String mainMenu = "\n####Counter####\n\n1.Guest\n2.Member\n3.Register\n\4.Check courts status\n\n0.Exit";
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
         Counter ct = new Counter(10000);
+        Member m = new Member();
+        do {
+            System.out.println(mainMenu);
+            System.out.print("\nSelect menu : ");
+            selectMenu = sc.nextInt();
 
-        System.out.println(menu);
-        System.out.print("Select menu : ");
-        selectMenu = sc.nextInt();
-
-        switch (selectMenu) {
-            case 1:
-                do {
-                    System.out.println(menuGuest);
-                    System.out.print("Select menu : ");
+            switch (selectMenu) {
+                case 1:
+                    System.out.println(menu);
+                    System.out.print("\nSelect menu : ");
                     selectGuest = sc.nextInt();
 
                     switch (selectGuest) {
@@ -42,14 +43,24 @@ public class BadmintonBook {
 
                         case 2:
                             ct.checkOut();
-                            System.out.println(ct.getCourtStat());
-                    }
-                } while (selectGuest != 0);
-                break;
+                            break;
 
-            case 2:;
-        }
+                    }
+
+                case 2:
+                    break;
+                    
+                case 3:
+                    ct.register();
+                    break;
+                    
+                case 4:
+                    System.out.print(ct.getCourtStat());
+                    break;
+
+            }
+        } while (selectMenu != 0);
+
     }
 
 }
-

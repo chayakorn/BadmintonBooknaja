@@ -23,6 +23,7 @@ public class Counter {
     private StopWatch timer = new StopWatch();
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private LocalTime time = LocalTime.now();
+    private Member[] member = new Member[1];
 
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
@@ -140,6 +141,47 @@ public class Counter {
                 + " Court 12:" + court[11].toString();
     }
 
+    public void login() {
+
+    }
+
+    public void register() {
+
+        for (int i = 0; i < member.length; i++) {
+            if (member[i] == null) {
+                member[i] = new Member();
+                member[i].register0(input);
+                break;
+            } else {
+                expandMember();
+                member[i + 1] = new Member();
+                member[i + 1].register0(input);
+                break;
+            }
+
+//            if(member[i]!=null){
+////                Member [] member1 = new Member[member.length+1];
+////                for(int j = 0;j<member1.length;i++){
+////                    member[i]=member1[i];
+////                    break;
+////                    
+////                }
+////                member[i].register0(input);
+//                
+//                
+//            }
+        }
+    }
+
+    public void expandMember() {
+        Member[] m = new Member[member.length + 1];
+        for (int i = 0; i < member.length; i++) {
+            m[i] = member[i];
+            
+        }
+        member = m;
+    }
+
     @Override
     public String toString() {
         return "Counter{" + "MoneyInCounter=" + MoneyInCounter + ", countCustomer=" + countCustomer + ", allIncome=" + allIncome + ", input=" + input + '}';
@@ -155,6 +197,16 @@ public class Counter {
         System.out.println(n.getCourtStat());
         n.checkOut();
         System.out.println(n.getCourtStat());
+
+//        n.addMoney(5000);
+//        System.out.println(n);
+//        n.calculate(a);
+//
+//        System.out.println(n.getCourtStat());
+//        n.checkOut();
+//        System.out.println(n.getCourtStat());
+        n.register();
+        n.register();
 
     }
 

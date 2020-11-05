@@ -24,6 +24,7 @@ public class Counter {
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private LocalTime time = LocalTime.now();
     private static Member[] member = new Member[1];
+    private String menuMem = "1.Book\n2.Checkout";
 //<<<<<<< HEAD
 ////<<<<<<< HEAD
 ////    private Member[] members;
@@ -46,6 +47,28 @@ public class Counter {
     }
 
     public void calculate(Scanner input) {
+        System.out.print("Input Customer Hr : ");
+        int hrCustomer = input.nextInt();
+        System.out.print("Input Customer Money : ");
+        double moneyFromCustomer = input.nextDouble();
+        double price = hrCustomer * CourtCost;
+        if (price > moneyFromCustomer) {
+            System.out.print("Your Money not Enough.");
+        } else if (moneyFromCustomer >= price) {
+            double change = moneyFromCustomer - price;
+            if (MoneyInCounter > change) {
+                book();
+                countCustomer++;
+                allIncome += price;
+                System.out.println("Change:" + change);
+                System.out.println(getCourtStat());
+            } else {
+                System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
+            }
+        }
+    }
+
+    public void calculateMem(Scanner input) {
         System.out.print("Input Customer Hr : ");
         int hrCustomer = input.nextInt();
         System.out.print("Input Customer Money : ");
@@ -174,14 +197,43 @@ public class Counter {
 //>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
     }
 
-    public boolean login() {
+    public void login() {
+        System.out.print("name :");
         String name = input.next();
-        String tel=input.next();
-        for(int i = 0;i<member.length;i++){
-            if(name.equals(member[i].getName()) && tel.equals(member[i].getTelnum()))
-                return true;
+        System.out.print("tel :");
+        String tel = input.next();
+        for (int i = 0; i < member.length; i++) {
+            if (name.equals(member[i].getName()) && tel.equals(member[i].getTelnum())) {
+                System.out.println(menuMem);
+            }
+            System.out.println("Select menu : ");
+            int menu = input.nextInt();
+
+            switch (menu) {
+                case 1:
+                    System.out.print("Input Customer Hr : ");
+                    int hrCustomer = input.nextInt();
+                    System.out.print("Input Customer Money : ");
+                    double moneyFromCustomer = input.nextDouble();
+                    double price = hrCustomer * CourtCost;
+                    if (price > moneyFromCustomer) {
+                        System.out.print("Your Money not Enough.");
+                    } else if (moneyFromCustomer >= price) {
+                        double change = moneyFromCustomer - price;
+                        if (MoneyInCounter > change) {
+                            book();
+                            countCustomer++;
+                            allIncome += price;
+                            System.out.println("Change:" + change);
+                            System.out.println(getCourtStat());
+                        } else {
+                            System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
+                        }
+                    }
+                    break;
+            }
         }
-        return false;
+
     }
 
     public void register() {
@@ -202,13 +254,15 @@ public class Counter {
 //=======
 //
 //>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
-        if(count<member.length){
-            member[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-        }else expandMember();
-        if(count<member.length){
-            member[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
+        if (count < member.length) {
+            member[count++] = new Member(getNameFromKeyboard(input), getTelNumberFromKeyboard(input));
+        } else {
+            expandMember();
         }
-            
+        if (count < member.length) {
+            member[count++] = new Member(getNameFromKeyboard(input), getTelNumberFromKeyboard(input));
+        }
+
 //        for(int i = 0;i<member.length;i++){
 //            if (member[i] == null){
 //                member[i] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
@@ -220,8 +274,6 @@ public class Counter {
 //                member[i+ 1] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
 //                break;
 //                }
-            
-
 //        for (int i = 0; i < member.length; i++) {
 //            if (member[i] == null) {
 //                member[i] = new Member();
@@ -250,7 +302,6 @@ public class Counter {
 //=======
 //
 //>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
-
 //        for (int i = 0; i < member.length; i++) {
 //            if (member[i] == null) {
 //                member[i] = new Member();
@@ -302,14 +353,14 @@ public class Counter {
 //
 //>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
 ////        }
-    
     }
-    
+
     public void expandMember() {
-        Member[] neoMember = new Member[member.length+1];
-        for (int i = 0; i< member.length;i++){
+        Member[] neoMember = new Member[member.length + 1];
+        for (int i = 0; i < member.length; i++) {
             neoMember[i] = member[i];
-        }member=neoMember;
+        }
+        member = neoMember;
     }
 //        Member[] m = new Member[member.length + 1];
 //        for (int i = 0; i < member.length; i++) {
@@ -318,10 +369,10 @@ public class Counter {
 //        }
 //        member = m;
 //    }
-    
-    public String showMembers(){
+
+    public String showMembers() {
         String sm = "###Show members###";
-        for(int i = 0 ; i < member.length; i++){
+        for (int i = 0; i < member.length; i++) {
             sm += "\n" + member[i];
         }
         return sm;
@@ -365,5 +416,5 @@ public class Counter {
 //
 //    }
 
-}
+    }
 }

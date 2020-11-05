@@ -25,7 +25,7 @@ public class BadmintonBook {
     public static void main(String[] args) {
 
         Counter ct = new Counter(10000);
-        
+
         do {
             System.out.println(mainMenu);
             System.out.print("\nSelect menu : ");
@@ -49,6 +49,10 @@ public class BadmintonBook {
                     }
 
                 case 2:
+
+                            ct.login();
+                        
+                    
                     break;
                 case 3:
                     ct.register();

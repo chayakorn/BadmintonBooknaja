@@ -6,6 +6,7 @@
 package badmintonbook;
 
 import java.time.LocalTime;
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -16,15 +17,16 @@ public class Counter {
 
     private double MoneyInCounter;
     private int countCustomer = 0;
-    private int CourtCost = 100;
-    private double allIncome;
-    private double allIncomeever[] = new double[100];
+    private final int CourtCost = 100;
+    private IncomeHistory history;
     private Scanner input = new Scanner(System.in);
     private StopWatch timer = new StopWatch();
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private LocalTime time = LocalTime.now();
     private static Member[] member = new Member[1];
     private int count;
+    private String nameCustomer;
+    private String telCustomer;
 //<<<<<<< HEAD
 //    private Member a = new Member();
 //=======
@@ -32,6 +34,8 @@ public class Counter {
 
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
+        this.history=new IncomeHistory(0);
+        
     }
 
     public void addMoney(double money) {
@@ -51,7 +55,9 @@ public class Counter {
             if (MoneyInCounter > change) {
                 book();
                 countCustomer++;
-                allIncome += price;
+                Income income = new Income(price,hrCustomer);
+                income.setNameTel(nameCustomer, telCustomer);
+                history.append(income);
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
             } else {
@@ -73,19 +79,7 @@ public class Counter {
         return countCustomer;
     }
 
-    public void Topoff() {
-        double[] allIncomeeverV_2 = new double[allIncomeever.length + 100];
-        for (int i = 0; i < allIncomeever.length; i++) {
-            if (i > allIncomeever.length) {
-                for (int k = 0; k < allIncomeeverV_2.length; k++) {
-                    allIncomeeverV_2[k] = allIncomeever[k];
-                }
-                allIncomeever = allIncomeeverV_2;
-            }
 
-            allIncomeever[i] = allIncome;
-        }
-    }
 
     public void book() {
 
@@ -93,6 +87,8 @@ public class Counter {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourt();
                 court[i].toggleLight();
+                nameCustomer = court[i].getCustomerName();
+                telCustomer = court[i].getTelCustomer();
                 break;
 
             }

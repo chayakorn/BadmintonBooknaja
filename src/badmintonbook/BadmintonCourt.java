@@ -31,12 +31,12 @@ public class BadmintonCourt {
     public String getTelCustomer(){
         return TelCustomer;
     }
-    public void setCustomerName(String customerName){
-        this.CustomerName = customerName;
-    }
-    public void setCustomerTel(String customerTel){
-        this.TelCustomer = customerTel;
-    } 
+//    public void setCustomerName(String customerName){
+//        this.CustomerName = customerName;
+//    }
+//    public void setCustomerTel(String customerTel){
+//        this.TelCustomer = customerTel;
+//    } 
     public void setBookStatus(boolean status){
         this.bookStatus = status;
     }
@@ -57,6 +57,13 @@ public class BadmintonCourt {
             System.out.println("This Court is Booked.");
         }
 
+    }
+    public void bookCourtmember(){
+        if(!bookStatus){
+            bookStatus = true;
+            
+            
+        }
     }
     
     public void checkOutCourt(){

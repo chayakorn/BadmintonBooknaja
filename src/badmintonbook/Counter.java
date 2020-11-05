@@ -114,8 +114,6 @@ public class Counter {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourt();
                 court[i].toggleLight();
-                court[i].setCustomerName(nameCustomer);
-                court[i].setCustomerTel(telCustomer);
 //                nameCustomer = court[i].getCustomerName();
 //                telCustomer = court[i].getTelCustomer();
                 break;

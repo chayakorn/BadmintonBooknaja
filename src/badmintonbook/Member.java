@@ -13,12 +13,14 @@ import java.util.Scanner;
  */
 public class Member {
 
+
     private String name;
     private String telnum;
 
     public Member(String name, String telnum) {
         this.name = name;
         this.telnum = telnum;
+
 
     }
 
@@ -29,16 +31,12 @@ public class Member {
     public String getTelnum() {
         return telnum;
     }
-//    public void register0(Scanner input){
-//        System.out.print("Input your Name : ");
-//        name = input.next();
-//        System.out.print("Input your Telnumber : ");
-//        telnum = input.next();
-//    }
+
+
 
     @Override
     public String toString() {
-        return "\nMembername : " + name + "\nmemberTel : " + telnum + "\n\n---------------------------------------";
+        return "Memberstatus { Name: " + name + ", Tel: " + telnum +"}";
     }
 
 }

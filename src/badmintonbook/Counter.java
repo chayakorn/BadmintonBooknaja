@@ -129,6 +129,7 @@ public class Counter {
         for (int i = 0; i< court.length;i++){
             if(court[i].getBookStatus()==false){
                 court[i].setBookStatus(true);
+                court[i].setLight(true);
                 court[i].setCustomerTel_Name(nameCustomer, telCustomer);
                 break;
             }

@@ -31,15 +31,12 @@ public class BadmintonCourt {
     public String getTelCustomer(){
         return TelCustomer;
     }
-    public void setCustomerTel_Name(String telCustomer,String customerName){
+    public void setCustomerTel_Name(String customerName,String telCustomer){
         this.CustomerName = customerName;
         this.TelCustomer = telCustomer;
     }
     public void setBookStatus(boolean status){
         this.bookStatus = status;
-    }
-    public void setLight(boolean status){
-        this.light=status;
     }
     public boolean isBookStatusFull(){
         return bookStatus;

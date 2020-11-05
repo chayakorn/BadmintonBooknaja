@@ -25,10 +25,6 @@ public class Counter {
     private LocalTime time = LocalTime.now();
     private static Member[] member = new Member[1];
     private String menuMem = "1.Book\n2.Checkout";
-//<<<<<<< HEAD
-//
-//=======
-//>>>>>>> 3da03fc1c322ae36a4c79a4c83dd77a714706343
     private int count;
     private String nameCustomer;
     private String telCustomer;
@@ -103,11 +99,12 @@ public class Counter {
     public int getCountCustomer() {
         return countCustomer;
     }
-    public IncomeHistory getHistory(){
+
+    public IncomeHistory getHistory() {
         return history;
     }
+
     public void book() {
-//        System.out.println(Arrays.toString(court));
         for (int i = 0; i < court.length; i++) {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourt();
@@ -121,10 +118,6 @@ public class Counter {
     public void bookMember() {
         for (int i = 0; i < court.length; i++) {
             if (court[i].getBookStatus() == false) {
-//                for(int j=0;j<count;j++){
-//                    if(telCustomer.equals(member[j].getTelnum()))
-//                        nameCustomer = member[j].getName();
-//                }
                 court[i].bookCourtmember(nameCustomer, telCustomer);
                 court[i].toggleLight();
                 break;
@@ -173,25 +166,19 @@ public class Counter {
     }
 
     public boolean login() {
-//<<<<<<< HEAD
-////        System.out.print("Name :");
-////        nameCustomer = input.next();
-//        System.out.print("Tel :");
-//        telCustomer = input.next();
-//        for (int i = 0; i < member.length; i++) {
-//            if (telCustomer.equals(member[i].getTelnum())) {
-////                nameCustomer.equals(member[i].getName()) &&
-//=======
-//        System.out.println("name :");
-//        nameCustomer = input.next();
         System.out.print("Tel: ");
         telCustomer = input.next();
         for (int i = 0; i < member.length; i++) {
+            if (member[0] == null) {
+                System.out.println("Didn't register.");
+                break;
+            }
             if (telCustomer.equals(member[i].getTelnum())) {
                 nameCustomer = member[i].getName();
                 telCustomer = member[i].getTelnum();
-//>>>>>>> 3da03fc1c322ae36a4c79a4c83dd77a714706343
                 return true;
+            } else {
+                System.out.println("Tel Incorrect or didn't register.");
             }
         }
         return false;

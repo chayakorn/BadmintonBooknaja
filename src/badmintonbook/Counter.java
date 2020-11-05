@@ -171,7 +171,7 @@ public class Counter {
         String name = input.next();
         String tel=input.next();
         for(int i = 0;i<member.length;i++){
-            if(name.equals(member[i].getName()),tel.equals(member[i].getTelnum()))
+            if(name.equals(member[i].getName()) && tel.equals(member[i].getTelnum()))
                 return true;
         }
         return false;

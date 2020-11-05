@@ -12,10 +12,10 @@ import java.util.Scanner;
  * @author Chayakorn
  */
 public class BadmintonCourt {
-
+    	
     private boolean light;
     private boolean bookStatus;
-    private String name,CustomerName,TelCustomer = null;
+    private String name,CustomerName,TelCustomer;
     private Scanner input= new Scanner(System.in);
     private StopWatch timer = new StopWatch();
 
@@ -32,6 +32,9 @@ public class BadmintonCourt {
     public String getTelCustomer(){
         return TelCustomer;
     }
+    public void setBookStatus(boolean status){
+        this.bookStatus = status;
+    }
     public boolean isBookStatusFull(){
         return bookStatus;
     }
@@ -42,14 +45,30 @@ public class BadmintonCourt {
     public void bookCourt() {
         if (!bookStatus) {
             bookStatus = true;
+<<<<<<< HEAD
             CustomerName= getNameFromKeyboard(input);
             TelCustomer = getTelNumberFromKeyboard(input);
             timer.start();
+=======
+            String name = getNameFromKeyboard(input);
+            String tel = getTelNumberFromKeyboard(input);
+            setName(name);
+            setTel(tel);
+>>>>>>> c350a747c68b4b35f3a19ca75853c3a8c60a9db2
         } else {
-            System.out.println("This Court is Booked");
+            System.out.println("This Court is Booked.");
         }
 
     }
+    public void bookCourtmember(String name, String tel){
+        if(!bookStatus){
+            bookStatus = true;
+            setName(name);
+            setTel(tel);
+            
+        }
+    }
+    
     public void checkOutCourt(){
         if(bookStatus){
             timer.stop();
@@ -58,7 +77,7 @@ public class BadmintonCourt {
             TelCustomer = null;
             
         }else {
-            System.out.println("This Court is Checked out");
+            System.out.println("This Court is Checked out.");
         }
         
     }
@@ -72,18 +91,26 @@ public class BadmintonCourt {
     }
 
     public String getNameFromKeyboard(Scanner input) {
-        System.out.print("input Customer name:");
+        System.out.print("input Customer name : ");
         return input.nextLine();
     }
 
     public String getTelNumberFromKeyboard(Scanner input) {
-        System.out.print("input Customer Telephone Number:");
+        System.out.print("input Customer Telephone Number : ");
         return input.nextLine();
+    }
+    
+    public void setName(String name) {
+        this.CustomerName = name;
+    }
+    
+    public void setTel(String tel) {
+        this.TelCustomer = tel;
     }
 
     @Override
     public String toString() {
-        return "BadmintonCourt:" + "light:" + light + ", bookStatus:" + bookStatus + ", name:" + name + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer ;
+        return "BadmintonCourt:" + "light:" + light + ", bookStatus:" + bookStatus  + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer ;
     }
     
 }

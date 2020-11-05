@@ -12,20 +12,32 @@ import java.util.Scanner;
  * @author Student
  */
 public class Member {
+<<<<<<< HEAD
     private  String name;
     private  String telnum;
     private  int points;
+=======
+>>>>>>> c350a747c68b4b35f3a19ca75853c3a8c60a9db2
 
-    
-    public Member(){
-        
+
+    private String name;
+    private String telnum;
+
+    public Member(String name, String telnum) {
+        this.name = name;
+        this.telnum = telnum;
+
+
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public String getTelnum(){
+
+    public String getTelnum() {
         return telnum;
     }
+<<<<<<< HEAD
     public int getPoints(){
         return points;
     }
@@ -46,4 +58,14 @@ public class Member {
 
     
     
+=======
+
+
+
+    @Override
+    public String toString() {
+        return "Memberstatus { Name: " + name + ", Tel: " + telnum +"}";
+    }
+
+>>>>>>> c350a747c68b4b35f3a19ca75853c3a8c60a9db2
 }

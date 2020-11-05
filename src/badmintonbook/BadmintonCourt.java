@@ -52,14 +52,23 @@ public class BadmintonCourt {
     }
     public void checkOutCourt(){
         if(bookStatus){
+            timer.stop();
             bookStatus = false;
             CustomerName = null;
             TelCustomer = null;
-            timer.stop();
+            
         }else {
             System.out.println("This Court is Checked out");
         }
         
+    }
+    public String getRemainingtime(int hr){
+        long t = timer.getElapsedTimeSecs();
+        if(t/60/60<hr){
+            long i =hr-t/60/60;
+        return "Your Ramainingtime:" + i;
+    }
+        return "Time out";
     }
 
     public String getNameFromKeyboard(Scanner input) {

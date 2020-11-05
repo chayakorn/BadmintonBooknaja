@@ -18,7 +18,6 @@ public class Counter {
     private int countCustomer = 0;
     private int CourtCost = 100;
     private double allIncome;
-    private double allIncomeever[] = new double[100];
     private Scanner input = new Scanner(System.in);
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private Member[] member = new Member[1];
@@ -65,19 +64,6 @@ public class Counter {
         return countCustomer;
     }
 
-    public void Topoff() {
-        double[] allIncomeeverV_2 = new double[allIncomeever.length + 100];
-        for (int i = 0; i < allIncomeever.length; i++) {
-            if (i > allIncomeever.length) {
-                for (int k = 0; k < allIncomeeverV_2.length; k++) {
-                    allIncomeeverV_2[k] = allIncomeever[k];
-                }
-                allIncomeever = allIncomeeverV_2;
-            }
-
-            allIncomeever[i] = allIncome;
-        }
-    }
 
     public void book() {
 
@@ -182,8 +168,10 @@ public class Counter {
 
     @Override
     public String toString() {
-        return "Counter{" + "MoneyInCounter=" + MoneyInCounter + ", countCustomer=" + countCustomer + ", allIncome=" + allIncome + ", input=" + input + '}';
+        return "Counter{" + "MoneyInCounter=" + MoneyInCounter + ", countCustomer=" + countCustomer + ", allIncome=" + allIncome + '}';
     }
+
+    
 
     public static void main(String[] args) {
         Scanner a = new Scanner(System.in);

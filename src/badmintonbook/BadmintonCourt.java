@@ -31,10 +31,12 @@ public class BadmintonCourt {
     public String getTelCustomer(){
         return TelCustomer;
     }
-    public void setCustomerTel_Name(String customerName,String telCustomer){
+    public void setCustomerName(String customerName){
         this.CustomerName = customerName;
-        this.TelCustomer = telCustomer;
     }
+    public void setCustomerTel(String customerTel){
+        this.TelCustomer = customerTel;
+    } 
     public void setBookStatus(boolean status){
         this.bookStatus = status;
     }

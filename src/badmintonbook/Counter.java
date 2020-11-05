@@ -98,28 +98,6 @@ public class Counter {
     }
     
 
-    public void calculateMem(Scanner input) {
-        System.out.print("Input Customer Hr : ");
-        int hrCustomer = input.nextInt();
-        System.out.print("Input Customer Money : ");
-        double moneyFromCustomer = input.nextDouble();
-        double price = hrCustomer * CourtCost;
-        if (price > moneyFromCustomer) {
-            System.out.print("Your Money not Enough.");
-        } else if (moneyFromCustomer >= price) {
-            double change = moneyFromCustomer - price;
-            if (MoneyInCounter > change) {
-                book();
-                countCustomer++;
-                allIncome += price;
-                System.out.println("Change:" + change);
-                System.out.println(getCourtStat());
-            } else {
-                System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
-            }
-        }
-    }
-
     public double getMoneyInCounter() {
         return MoneyInCounter;
     }
@@ -224,52 +202,54 @@ public class Counter {
 //>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
     }
 
-<<<<<<< HEAD
-    public void login() {
-        System.out.print("name :");
-        String name = input.next();
-        System.out.print("tel :");
-        String tel = input.next();
-        for (int i = 0; i < member.length; i++) {
-            if (name.equals(member[i].getName()) && tel.equals(member[i].getTelnum())) {
-                System.out.println(menuMem);
-            }
-            System.out.println("Select menu : ");
-            int menu = input.nextInt();
-
-            switch (menu) {
-                case 1:
-                    System.out.print("Input Customer Hr : ");
-                    int hrCustomer = input.nextInt();
-                    System.out.print("Input Customer Money : ");
-                    double moneyFromCustomer = input.nextDouble();
-                    double price = hrCustomer * CourtCost;
-                    if (price > moneyFromCustomer) {
-                        System.out.print("Your Money not Enough.");
-                    } else if (moneyFromCustomer >= price) {
-                        double change = moneyFromCustomer - price;
-                        if (MoneyInCounter > change) {
-                            book();
-                            countCustomer++;
-                            allIncome += price;
-                            System.out.println("Change:" + change);
-                            System.out.println(getCourtStat());
-                        } else {
-                            System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
-                        }
-                    }
-                    break;
-            }
-=======
+//<<<<<<< HEAD
+//    public void login() {
+//        System.out.print("name :");
+//        String name = input.next();
+//        System.out.print("tel :");
+//        String tel = input.next();
+//        for (int i = 0; i < member.length; i++) {
+//            if (name.equals(member[i].getName()) && tel.equals(member[i].getTelnum())) {
+//                System.out.println(menuMem);
+//            }
+//            System.out.println("Select menu : ");
+//            int menu = input.nextInt();
+//
+//            switch (menu) {
+//                case 1:
+//                    System.out.print("Input Customer Hr : ");
+//                    int hrCustomer = input.nextInt();
+//                    System.out.print("Input Customer Money : ");
+//                    double moneyFromCustomer = input.nextDouble();
+//                    double price = hrCustomer * CourtCost;
+//                    if (price > moneyFromCustomer) {
+//                        System.out.print("Your Money not Enough.");
+//                    } else if (moneyFromCustomer >= price) {
+//                        double change = moneyFromCustomer - price;
+//                        if (MoneyInCounter > change) {
+//                            book();
+//                            countCustomer++;
+//                            allIncome += price;
+//                            System.out.println("Change:" + change);
+//                            System.out.println(getCourtStat());
+//                        } else {
+//                            System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
+//                        }
+//                    }
+//                    break;
+//            }
+//=======
     public boolean login() {
+        System.out.println("name :");
         nameCustomer = input.next();
+        System.out.println("tel :");
         telCustomer=input.next();
         for(int i = 0;i<member.length;i++){
             if(nameCustomer.equals(member[i].getName()) && telCustomer.equals(member[i].getTelnum()))
                 return true;
->>>>>>> 35637f83a56fc49966392172991a8bac7750d145
+//>>>>>>> 35637f83a56fc49966392172991a8bac7750d145
         }
-
+        return false;
     }
 
     public void register() {

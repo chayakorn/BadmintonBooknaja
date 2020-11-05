@@ -49,10 +49,9 @@ public class BadmintonBook {
                     }
 
                 case 2:
-
-                            ct.login();
-                        
-                    
+                    if(ct.login() == true){
+                        ct.calculate4Member(sc);
+                    }
                     break;
                 case 3:
                     ct.register();

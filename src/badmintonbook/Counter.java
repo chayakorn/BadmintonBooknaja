@@ -59,10 +59,10 @@ public class Counter {
             double change = moneyFromCustomer - price;
             if (MoneyInCounter > change) {
                 book();
-//                countCustomer++;
-//                Income income = new Income(price,hrCustomer);
-//                income.setNameTel(nameCustomer, telCustomer);
-//                history.append(income);
+                countCustomer++;
+                Income income = new Income(price,hrCustomer);
+                income.setNameTel(nameCustomer, telCustomer);
+                history.append(income);
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
             } else {
@@ -114,8 +114,10 @@ public class Counter {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourt();
                 court[i].toggleLight();
-                nameCustomer = court[i].getCustomerName();
-                telCustomer = court[i].getTelCustomer();
+                court[i].setCustomerName(nameCustomer);
+                court[i].setCustomerTel(telCustomer);
+//                nameCustomer = court[i].getCustomerName();
+//                telCustomer = court[i].getTelCustomer();
                 break;
 
             }
@@ -127,8 +129,8 @@ public class Counter {
             if(court[i].getBookStatus()==false){
                 court[i].setBookStatus(true);
                 court[i].toggleLight();
-//                court[i].setCustomerName(nameCustomer);
-//                court[i].setCustomerTel(telCustomer);
+                court[i].setCustomerName(nameCustomer);
+                court[i].setCustomerTel(telCustomer);
                 break;
             }
         }
@@ -213,18 +215,18 @@ public class Counter {
 //                    break;
 //            }
 //=======
-    public boolean login() {
-        System.out.println("name :");
-        nameCustomer = input.next();
-        System.out.println("tel :");
-        telCustomer=input.next();
-        for(int i = 0;i<member.length;i++){
-            if(nameCustomer.equals(member[i].getName()) && telCustomer.equals(member[i].getTelnum()))
-                return true;
+//    public boolean login() {
+//        System.out.println("name :");
+//        nameCustomer = input.next();
+//        System.out.println("tel :");
+//        telCustomer=input.next();
+//        for(int i = 0;i<member.length;i++){
+//            if(nameCustomer.equals(member[i].getName()) && telCustomer.equals(member[i].getTelnum()))
+//                return true;
 //>>>>>>> 35637f83a56fc49966392172991a8bac7750d145
-        }
-        return false;
-    }
+//        }
+//        return false;
+//    }
 
     public void register() {
 //<<<<<<< HEAD

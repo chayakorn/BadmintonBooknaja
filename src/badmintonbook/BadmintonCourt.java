@@ -54,12 +54,12 @@ public class BadmintonCourt {
 
     }
     public void bookCourtmember(String name, String tel){
-        if(!bookStatus){
-            bookStatus = true;
-            setName(name);
-            setTel(tel);
-            
-        }
+//        if(!bookStatus){
+//            bookStatus = true;
+//            setName(name);
+//            setTel(tel);
+//            
+//        }
     }
     
     public void checkOutCourt(){

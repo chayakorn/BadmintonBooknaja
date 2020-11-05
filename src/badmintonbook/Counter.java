@@ -26,13 +26,7 @@ public class Counter {
     private LocalTime time = LocalTime.now();
     private static Member[] member = new Member[1];
     private String menuMem = "1.Book\n2.Checkout";
-//<<<<<<< HEAD
-////<<<<<<< HEAD
-////    private Member[] members;
-////=======
-////>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
-//=======
-//>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
+
     private int count;
     private String nameCustomer;
     private String telCustomer;
@@ -71,7 +65,7 @@ public class Counter {
         }
     }
 
-    public void calculate4Member(Scanner input) {
+    public void calculateForMember(Scanner input) {
         System.out.print("Input Customer Hr : ");
         int hrCustomer = input.nextInt();
         System.out.print("Input Customer Money : ");
@@ -109,13 +103,11 @@ public class Counter {
     }
 
     public void book() {
-        System.out.println(Arrays.toString(court));
+//        System.out.println(Arrays.toString(court));
         for (int i = 0; i < court.length; i++) {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourt();
                 court[i].toggleLight();
-//                nameCustomer = court[i].getCustomerName();
-//                telCustomer = court[i].getTelCustomer();
                 break;
 
             }
@@ -127,8 +119,6 @@ public class Counter {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourtmember(nameCustomer, telCustomer);
                 court[i].toggleLight();
-//                court[i].setCustomerName(nameCustomer);
-//                court[i].setCustomerTel(telCustomer);
                 break;
             }
         }
@@ -144,21 +134,38 @@ public class Counter {
                 court[i].toggleLight();
                 System.out.println(getCourtStat());
                 break;
-
             }
 
         }
-
     }
+
+    public void bookCourtmember(String name, String tel) {
+//        if(!bookStatus){
+//            bookStatus = true;
+//            setName(name);
+//            setTel(tel);
+//            
+//        }
+        for (int i = 0; i < court.length; i++) {
+            
+        
+            if (name.equals(court[i].getCustomerName()) && tel.equals(court[i].getTelCustomer())) {
+                court[i].toggleLight();
+                break;
+            }
+        }
+        
+    }
+    
 
     public String getNameFromKeyboard(Scanner input) {
         System.out.print("input Customer name : ");
-        return input.nextLine();
+        return input.next();
     }
 
     public String getTelNumberFromKeyboard(Scanner input) {
         System.out.print("input Customer Telephone Number : ");
-        return input.nextLine();
+        return input.next();
     }
 
     public String getCourtStat() {
@@ -177,12 +184,13 @@ public class Counter {
     }
 
     public boolean login() {
-        System.out.println("name :");
-        nameCustomer = input.next();
-        System.out.println("tel :");
+//        System.out.print("Name :");
+//        nameCustomer = input.next();
+        System.out.print("Tel :");
         telCustomer = input.next();
         for (int i = 0; i < member.length; i++) {
-            if (nameCustomer.equals(member[i].getName()) && telCustomer.equals(member[i].getTelnum())) {
+            if (telCustomer.equals(member[i].getTelnum())) {
+//                nameCustomer.equals(member[i].getName()) &&
                 return true;
             }
         }

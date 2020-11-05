@@ -17,8 +17,10 @@ public class BadmintonBook {
     private static int selectMenu;
     private static String memTel;
     private static String name;
-    private static String menu = "\n####Menu####" + "\n1.Book\n2.Checkout\n\n0.Back";
-    private static String mainMenu = "\n####Counter####\n\n1.Guest\n2.Member\n3.Register\n4.Check courts status\n5.Check Members\n\n0.Exit";
+    private static String menu = "\n####Menu####" + "\n1.Book\n\n0.Back";
+    private static String mainMenu = "\n####Counter####\n\n1.Book as Guest\n2.Book as Member\n3.Register\n4.Checkout\n5.Check courts status\n6.Check Members\n\n0.Exit";
+    private static String startProg = "Do you want to started program?(Yes or No) : ";
+    private static String start;
 
     static Scanner sc = new Scanner(System.in);
 
@@ -26,46 +28,43 @@ public class BadmintonBook {
 
         Counter ct = new Counter(10000);
 
-        do {
-            System.out.println(mainMenu);
-            System.out.print("\nSelect menu : ");
-            selectMenu = sc.nextInt();
+//        do {
+//            System.out.println(startProg);
+//            start = sc.next();
 
-            switch (selectMenu) {
-                case 1:
-                    System.out.println(menu);
-                    System.out.print("\nSelect menu : ");
-                    selectGuest = sc.nextInt();
+            do {
+                System.out.println(mainMenu);
+                System.out.print("\nSelect menu : ");
+                selectMenu = sc.nextInt();
 
-                    switch (selectGuest) {
-                        case 1:
-                            ct.calculate(sc);
-                            break;
+                switch (selectMenu) {
+                    case 1:
+                        ct.calculate(sc);
+                        break;
 
-                        case 2:
-                            ct.checkOut();
-                            break;
+                    case 2:
+                        if (ct.login() == true) {
+                            ct.calculateForMember(sc);
+                        }
+                        break;
+                    case 3:
+                        ct.register();
+                        break;
+                    case 4:
+                        ct.checkOut();
+                        break;
+                    case 5:
+                        System.out.print(ct.getCourtStat());
+                        break;
 
-                    }
+                    case 6:
+                        System.out.print(ct.showMembers());
+                        break;
+                }
 
-                case 2:
-                    if(ct.login()==true){
-                        ct.calculate4Member(sc);
-                    }
-                    break;
-                case 3:
-                    ct.register();
-                    break;
-                case 4:
-                    System.out.print(ct.getCourtStat());
-                    break;
+            } while (selectMenu != 0);
 
-                case 5:
-                    System.out.print(ct.showMembers());
-                    break;
-            }
-        } while (selectMenu != 0);
+//        } while (start != 0);
 
     }
-
 }

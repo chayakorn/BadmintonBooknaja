@@ -167,11 +167,14 @@ public class Counter {
 //>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
     }
 
-    public void login() {
-        String
+    public boolean login() {
+        String name = input.next();
+        String tel=input.next();
         for(int i = 0;i<member.length;i++){
-            if()
+            if(name.equals(member[i].getName()),tel.equals(member[i].getTelnum()))
+                return true;
         }
+        return false;
     }
 
     public void register() {
@@ -181,7 +184,7 @@ public class Counter {
         }else expandMember();
         if(count<member.length){
             member[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-
+        }
             
 //        for(int i = 0;i<member.length;i++){
 //            if (member[i] == null){
@@ -219,7 +222,7 @@ public class Counter {
 //
 //            }
 //=======
->>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
+
 
 //        for (int i = 0; i < member.length; i++) {
 //            if (member[i] == null) {
@@ -232,7 +235,7 @@ public class Counter {
 //                member[i + 1].register(input);
 //                break;
 //            }
-<<<<<<< HEAD
+
 ////<<<<<<< HEAD
 ////            if (member[i] != null) {
 ////                Member[] member1 = new Member[i + 1];
@@ -258,11 +261,11 @@ public class Counter {
 ////                
 ////            }
 ////>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
-=======
+
 //>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
->>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
+
 //        }
-    }
+    
     }
     
     public void expandMember() {

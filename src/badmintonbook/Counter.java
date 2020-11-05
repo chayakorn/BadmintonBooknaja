@@ -24,10 +24,6 @@ public class Counter {
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private LocalTime time = LocalTime.now();
     private static Member[] member = new Member[1];
-<<<<<<< HEAD
-    private Member[] members;
-=======
->>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
     private int count;
 //<<<<<<< HEAD
 //    private Member a = new Member();
@@ -172,23 +168,14 @@ public class Counter {
     }
 
     public void login() {
-        
+        String
+        for(int i = 0;i<member.length;i++){
+            if()
+        }
     }
 
     public void register() {
-<<<<<<< HEAD
-        if(count<members.length){
-            members[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-        }else {
-            Member[] neoMember = new Member[members.length+100];
-            for (int i = 0;i<members.length;i++){
-                neoMember[i]=members[i];
-                members=neoMember;
-                members[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-            }
-        }
-        
-=======
+
         if(count<member.length){
             member[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
         }else expandMember();

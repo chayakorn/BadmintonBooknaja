@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author Chayakorn
  */
 public class BadmintonCourt {
-
+    	
     private boolean light;
     private boolean bookStatus;
     private String name,CustomerName,TelCustomer = null;

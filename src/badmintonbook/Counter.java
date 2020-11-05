@@ -84,7 +84,7 @@ public class Counter {
                 bookMember();
                 countCustomer++;
                 Income income = new Income(price,hrCustomer);
-                income.setNameTel(nameCustomer, telCustomer);
+                 income.setNameTel(nameCustomer, telCustomer);
                 history.append(income);
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
@@ -127,8 +127,8 @@ public class Counter {
             if(court[i].getBookStatus()==false){
                 court[i].setBookStatus(true);
                 court[i].toggleLight();
-                court[i].setCustomerName(nameCustomer);
-                court[i].setCustomerTel(telCustomer);
+//                court[i].setCustomerName(nameCustomer);
+//                court[i].setCustomerTel(telCustomer);
                 break;
             }
         }

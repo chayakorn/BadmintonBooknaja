@@ -57,12 +57,28 @@ public class BadmintonBook {
                         System.out.print(ct.getCourtStat());
                         break;
 
+//<<<<<<< HEAD
                     case 6:
                         System.out.print(ct.showMembers());
                         break;
                 }
 
             } while (selectMenu != 0);
+//=======
+//                    
+//                    }break;
+//
+//                case 2:
+//                    if(ct.login()==true){
+//                        ct.calculate4Member(sc);
+//                    }else System.out.println("");
+//                    break;
+//                case 3:                    ct.register();
+//                    break;
+//                case 4:
+//                    System.out.print(ct.getCourtStat());
+//                    break;
+//>>>>>>> 3da03fc1c322ae36a4c79a4c83dd77a714706343
 
 //        } while (start != 0);
 

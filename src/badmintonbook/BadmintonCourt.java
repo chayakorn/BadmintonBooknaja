@@ -17,6 +17,7 @@ public class BadmintonCourt {
     private boolean bookStatus;
     private String name,CustomerName,TelCustomer;
     private Scanner input= new Scanner(System.in);
+//    private StopWatch timer = new StopWatch();
 
 
     public BadmintonCourt(String name) {
@@ -54,24 +55,34 @@ public class BadmintonCourt {
 
     }
     public void bookCourtmember(String name, String tel){
-//        if(!bookStatus){
-//            bookStatus = true;
-//            setName(name);
-//            setTel(tel);
-//            
-//        }
+        if(!bookStatus){
+            bookStatus = true;
+            setName(name);
+            setTel(tel);
+            
+        }
     }
     
     public void checkOutCourt(){
         if(bookStatus){
+//            timer.stop();
             bookStatus = false;
             CustomerName = null;
             TelCustomer = null;
+            
         }else {
             System.out.println("This Court is Checked out.");
         }
         
     }
+//    public String getRemainingtime(int hr){
+//        long t = timer.getElapsedTimeSecs();
+//        if(t/60/60<hr){
+//            long i =hr-t/60/60;
+//        return "Your Ramainingtime:" + i;
+//    }
+//        return "Time out";
+//    }
 
     public String getNameFromKeyboard(Scanner input) {
         System.out.print("input Customer name : ");
@@ -93,7 +104,7 @@ public class BadmintonCourt {
 
     @Override
     public String toString() {
-        return "BadmintonCourt:" + "light:" + light + ", bookStatus:" + bookStatus  + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer ;
+        return "Light:" + light + ", bookStatus:" + bookStatus  + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer ;
     }
     
 }

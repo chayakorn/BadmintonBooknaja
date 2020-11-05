@@ -31,6 +31,10 @@ public class Member {
     public String getTelnum() {
         return telnum;
     }
+    public void setName(String name){
+        this.name = name;
+    }
+
 
 
 
@@ -38,5 +42,6 @@ public class Member {
     public String toString() {
         return "Memberstatus { Name: " + name + ", Tel: " + telnum +"}";
     }
+
 
 }

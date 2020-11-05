@@ -53,7 +53,6 @@ public class BadmintonBook {
                 case 3:
                     ct.register();
                     break;
-
                 case 4:
                     System.out.print(ct.getCourtStat());
                     break;

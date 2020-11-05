@@ -12,30 +12,33 @@ import java.util.Scanner;
  * @author Student
  */
 public class Member {
+
     private String name;
     private String telnum;
 
-    
-    public Member(){
+    public Member(String name, String telnum) {
+        this.name = name;
+        this.telnum = telnum;
 
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public String getTelnum(){
+
+    public String getTelnum() {
         return telnum;
     }
-    public void register0(Scanner input){
-        System.out.print("Input your Name : ");
-        name = input.next();
-        System.out.print("Input your Telnumber : ");
-        telnum = input.next();
-    }
+//    public void register0(Scanner input){
+//        System.out.print("Input your Name : ");
+//        name = input.next();
+//        System.out.print("Input your Telnumber : ");
+//        telnum = input.next();
+//    }
 
     @Override
     public String toString() {
-        return "Name : " + name + "Tel : " + telnum +"\n";
+        return "Name : " + name + "\nTel : " + telnum;
     }
-    
-    
+
 }

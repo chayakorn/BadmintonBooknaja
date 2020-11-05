@@ -37,11 +37,10 @@ public class Counter {
     private String nameCustomer;
     private String telCustomer;
 
-
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
-        this.history=new IncomeHistory(0);
-        
+        this.history = new IncomeHistory(0);
+
     }
 
     public void addMoney(double money) {
@@ -61,7 +60,7 @@ public class Counter {
             if (MoneyInCounter > change) {
                 book();
                 countCustomer++;
-                Income income = new Income(price,hrCustomer);
+                Income income = new Income(price, hrCustomer);
                 income.setNameTel(nameCustomer, telCustomer);
                 history.append(income);
                 System.out.println("Change:" + change);
@@ -71,6 +70,7 @@ public class Counter {
             }
         }
     }
+
     public void calculate4Member(Scanner input) {
         System.out.print("Input Customer Hr : ");
         int hrCustomer = input.nextInt();
@@ -84,8 +84,8 @@ public class Counter {
             if (MoneyInCounter > change) {
                 bookMember();
                 countCustomer++;
-                Income income = new Income(price,hrCustomer);
-                 income.setNameTel(nameCustomer, telCustomer);
+                Income income = new Income(price, hrCustomer);
+                income.setNameTel(nameCustomer, telCustomer);
                 history.append(income);
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
@@ -94,7 +94,6 @@ public class Counter {
             }
         }
     }
-    
 
     public double getMoneyInCounter() {
         return MoneyInCounter;
@@ -122,10 +121,11 @@ public class Counter {
             }
         }
     }
-    public void bookMember(){
-        for (int i = 0; i< court.length;i++){
-            if(court[i].getBookStatus()==false){
-                court[i].setBookStatus(true);
+
+    public void bookMember() {
+        for (int i = 0; i < court.length; i++) {
+            if (court[i].getBookStatus() == false) {
+                court[i].bookCourtmember(nameCustomer, telCustomer);
                 court[i].toggleLight();
 //                court[i].setCustomerName(nameCustomer);
 //                court[i].setCustomerTel(telCustomer);
@@ -176,75 +176,21 @@ public class Counter {
                 + " \nCourt 12:" + court[11].toString();
     }
 
-//<<<<<<< HEAD
-//    public void login() {
-//        System.out.print("name :");
-//        String name = input.next();
-//        System.out.print("tel :");
-//        String tel = input.next();
-//        for (int i = 0; i < member.length; i++) {
-//            if (name.equals(member[i].getName()) && tel.equals(member[i].getTelnum())) {
-//                System.out.println(menuMem);
-//            }
-//            System.out.println("Select menu : ");
-//            int menu = input.nextInt();
-//
-//            switch (menu) {
-//                case 1:
-//                    System.out.print("Input Customer Hr : ");
-//                    int hrCustomer = input.nextInt();
-//                    System.out.print("Input Customer Money : ");
-//                    double moneyFromCustomer = input.nextDouble();
-//                    double price = hrCustomer * CourtCost;
-//                    if (price > moneyFromCustomer) {
-//                        System.out.print("Your Money not Enough.");
-//                    } else if (moneyFromCustomer >= price) {
-//                        double change = moneyFromCustomer - price;
-//                        if (MoneyInCounter > change) {
-//                            book();
-//                            countCustomer++;
-//                            allIncome += price;
-//                            System.out.println("Change:" + change);
-//                            System.out.println(getCourtStat());
-//                        } else {
-//                            System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
-//                        }
-//                    }
-//                    break;
-//            }
-//=======
-//    public boolean login() {
-//        System.out.println("name :");
-//        nameCustomer = input.next();
-//        System.out.println("tel :");
-//        telCustomer=input.next();
-//        for(int i = 0;i<member.length;i++){
-//            if(nameCustomer.equals(member[i].getName()) && telCustomer.equals(member[i].getTelnum()))
-//                return true;
-//>>>>>>> 35637f83a56fc49966392172991a8bac7750d145
-//        }
-//        return false;
-//    }
+    public boolean login() {
+        System.out.println("name :");
+        nameCustomer = input.next();
+        System.out.println("tel :");
+        telCustomer = input.next();
+        for (int i = 0; i < member.length; i++) {
+            if (nameCustomer.equals(member[i].getName()) && telCustomer.equals(member[i].getTelnum())) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void register() {
-//<<<<<<< HEAD
-//<<<<<<< HEAD
-////<<<<<<< HEAD
-////        if(count<members.length){
-////            members[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-////        }else {
-////            Member[] neoMember = new Member[members.length+100];
-////            for (int i = 0;i<members.length;i++){
-////                neoMember[i]=members[i];
-////                members=neoMember;
-////                members[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-////            }
-////        }
-////        
-////=======
-//=======
-//
-//>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
+
         if (count < member.length) {
             member[count++] = new Member(getNameFromKeyboard(input), getTelNumberFromKeyboard(input));
         } else {
@@ -253,100 +199,6 @@ public class Counter {
         if (count < member.length) {
             member[count++] = new Member(getNameFromKeyboard(input), getTelNumberFromKeyboard(input));
         }
-
-//        for(int i = 0;i<member.length;i++){
-//            if (member[i] == null){
-//                member[i] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-//                break;
-//            }
-//        
-//        else{
-//                expandMember();
-//                member[i+ 1] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-//                break;
-//                }
-//        for (int i = 0; i < member.length; i++) {
-//            if (member[i] == null) {
-//                member[i] = new Member();
-//                member[i].register0(input);
-//                break;
-//            } else {
-//                expandMember();
-//                member[i + 1] = new Member();
-//                member[i + 1].register0(input);
-//                break;
-//            }
-//<<<<<<< HEAD
-//            if (member[i] != null) {
-//                Member[] member1 = new Member[i + 1];
-//                for (int j = 0; j < member1.length; i++) {
-//                    member1[i] = member[i];
-//
-//                }
-////                member1[i + 1].register0(input);
-////                member = member1;
-//
-//            }
-//=======
-//<<<<<<< HEAD
-////>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
-//=======
-//
-//>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
-//        for (int i = 0; i < member.length; i++) {
-//            if (member[i] == null) {
-//                member[i] = new Member();
-//                member[i].register(input);
-//                break;
-//            } else {
-//                expandMember();
-//                member[i + 1] = new Member();
-//                member[i + 1].register(input);
-//                break;
-//            }
-//<<<<<<< HEAD
-////<<<<<<< HEAD
-//=======
-//
-//>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
-////<<<<<<< HEAD
-////            if (member[i] != null) {
-////                Member[] member1 = new Member[i + 1];
-////                for (int j = 0; j < member1.length; i++) {
-////                    member1[i] = member[i];
-////
-////                }
-//////                member1[i + 1].register0(input);
-//////                member = member1;
-////
-////            }
-////=======
-//
-////            if(member[i]!=null){
-//////                Member [] member1 = new Member[member.length+1];
-//////                for(int j = 0;j<member1.length;i++){
-//////                    member[i]=member1[i];
-//////                    break;
-//////                    
-//////                }
-//////                member[i].register0(input);
-////                
-////                
-////            }
-////>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
-//<<<<<<< HEAD
-////=======
-////>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
-////>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
-//=======
-//
-////>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
-//
-//>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
-////        }
-//=======
-  
-//>>>>>>> 19051724224771505ccd3d5f5f4aed43fa49275f
     }
 
     public void expandMember() {
@@ -356,20 +208,9 @@ public class Counter {
         }
         member = neoMember;
     }
-//<<<<<<< HEAD
-//        Member[] m = new Member[member.length + 1];
-//        for (int i = 0; i < member.length; i++) {
-//            m[i] = member[i];
-//            
-//        }
-//        member = m;
-//    }
 
-//    public String showMembers() {
-//=======
-    
-    public String showMembers(){
-//>>>>>>> 19051724224771505ccd3d5f5f4aed43fa49275f
+    public String showMembers() {
+
         String sm = "###Show members###";
         for (int i = 0; i < member.length; i++) {
             sm += "\n" + member[i];
@@ -382,29 +223,28 @@ public class Counter {
         return "Counter{" + "MoneyInCounter=" + MoneyInCounter + ", countCustomer=" + countCustomer + ", input=" + input + '}';
     }
 
-    public static void main(String[] args) {
-        Scanner a = new Scanner(System.in);
-        Counter n = new Counter(300);
-        n.addMoney(5000);
-        System.out.println(n);
-        n.calculate(a);
-
-        System.out.println(n.getCourtStat());
-        n.checkOut();
-        System.out.println(n.getCourtStat());
-
+//    public static void main(String[] args) {
+//        Scanner a = new Scanner(System.in);
+//        Counter n = new Counter(300);
 //        n.addMoney(5000);
-        System.out.println(n);
-        n.calculate(a);
-
-        System.out.println(n.getCourtStat());
-        n.calculate(a);
-
-        System.out.println(n.getCourtStat());
-        n.calculate(a);
-
-        System.out.println(n.getCourtStat());
-
-
-    }
+//        System.out.println(n);
+//        n.calculate(a);
+//
+//        System.out.println(n.getCourtStat());
+//        n.checkOut();
+//        System.out.println(n.getCourtStat());
+//
+////        n.addMoney(5000);
+//        System.out.println(n);
+//        n.calculate(a);
+//
+//        System.out.println(n.getCourtStat());
+//        n.calculate(a);
+//
+//        System.out.println(n.getCourtStat());
+//        n.calculate(a);
+//
+//        System.out.println(n.getCourtStat());
+//
+//    }
 }

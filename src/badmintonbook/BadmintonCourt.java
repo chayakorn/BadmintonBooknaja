@@ -31,12 +31,6 @@ public class BadmintonCourt {
     public String getTelCustomer(){
         return TelCustomer;
     }
-//    public void setCustomerName(String customerName){
-//        this.CustomerName = customerName;
-//    }
-//    public void setCustomerTel(String customerTel){
-//        this.TelCustomer = customerTel;
-//    } 
     public void setBookStatus(boolean status){
         this.bookStatus = status;
     }
@@ -59,10 +53,11 @@ public class BadmintonCourt {
         }
 
     }
-    public void bookCourtmember(){
+    public void bookCourtmember(String name, String tel){
         if(!bookStatus){
             bookStatus = true;
-            
+            setName(name);
+            setTel(tel);
             
         }
     }

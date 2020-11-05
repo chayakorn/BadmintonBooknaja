@@ -63,6 +63,8 @@ public class BadmintonBook {
                 case 5:
                     System.out.print(ct.showMembers());
                     break;
+                case 6:
+                    ct.getHistory();
             }
         } while (selectMenu != 0);
 

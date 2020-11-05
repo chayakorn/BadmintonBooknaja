@@ -6,6 +6,7 @@
 package badmintonbook;
 
 import java.time.LocalTime;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -109,7 +110,7 @@ public class Counter {
     }
 
     public void book() {
-
+        System.out.println(Arrays.toString(court));
         for (int i = 0; i < court.length; i++) {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourt();
@@ -119,7 +120,6 @@ public class Counter {
                 break;
 
             }
-
         }
     }
     public void bookMember(){
@@ -345,13 +345,7 @@ public class Counter {
 //>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
 ////        }
 //=======
-
-        if(count<member.length){
-            member[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-        }else expandMember();
-        if(count<member.length){
-            member[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-        }    
+  
 //>>>>>>> 19051724224771505ccd3d5f5f4aed43fa49275f
     }
 

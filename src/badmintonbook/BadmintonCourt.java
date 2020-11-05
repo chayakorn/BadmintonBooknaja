@@ -15,7 +15,7 @@ public class BadmintonCourt {
     	
     private boolean light;
     private boolean bookStatus;
-    private static String name,CustomerName,TelCustomer = null;
+    private String name,CustomerName,TelCustomer;
     private Scanner input= new Scanner(System.in);
 
 
@@ -50,9 +50,10 @@ public class BadmintonCourt {
     public void bookCourt() {
         if (!bookStatus) {
             bookStatus = true;
-            CustomerName= getNameFromKeyboard(input);
-            TelCustomer = getTelNumberFromKeyboard(input);
-            
+            String name = getNameFromKeyboard(input);
+            String tel = getTelNumberFromKeyboard(input);
+            setName(name);
+            setTel(tel);
         } else {
             System.out.println("This Court is Booked.");
         }
@@ -85,6 +86,14 @@ public class BadmintonCourt {
     public String getTelNumberFromKeyboard(Scanner input) {
         System.out.print("input Customer Telephone Number : ");
         return input.nextLine();
+    }
+    
+    public void setName(String name) {
+        this.CustomerName = name;
+    }
+    
+    public void setTel(String tel) {
+        this.TelCustomer = tel;
     }
 
     @Override

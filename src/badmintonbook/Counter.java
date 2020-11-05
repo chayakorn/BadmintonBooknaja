@@ -226,7 +226,7 @@ public class Counter {
     }
 
     public void register() {
-<<<<<<< HEAD
+//<<<<<<< HEAD
 //<<<<<<< HEAD
 ////<<<<<<< HEAD
 ////        if(count<members.length){
@@ -343,7 +343,7 @@ public class Counter {
 //
 //>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
 ////        }
-=======
+//=======
 
         if(count<member.length){
             member[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
@@ -351,7 +351,7 @@ public class Counter {
         if(count<member.length){
             member[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
         }    
->>>>>>> 19051724224771505ccd3d5f5f4aed43fa49275f
+//>>>>>>> 19051724224771505ccd3d5f5f4aed43fa49275f
     }
 
     public void expandMember() {
@@ -361,7 +361,7 @@ public class Counter {
         }
         member = neoMember;
     }
-<<<<<<< HEAD
+//<<<<<<< HEAD
 //        Member[] m = new Member[member.length + 1];
 //        for (int i = 0; i < member.length; i++) {
 //            m[i] = member[i];
@@ -370,11 +370,11 @@ public class Counter {
 //        member = m;
 //    }
 
-    public String showMembers() {
-=======
+//    public String showMembers() {
+//=======
     
     public String showMembers(){
->>>>>>> 19051724224771505ccd3d5f5f4aed43fa49275f
+//>>>>>>> 19051724224771505ccd3d5f5f4aed43fa49275f
         String sm = "###Show members###";
         for (int i = 0; i < member.length; i++) {
             sm += "\n" + member[i];

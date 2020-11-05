@@ -24,7 +24,10 @@ public class Counter {
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private LocalTime time = LocalTime.now();
     private static Member[] member = new Member[1];
+<<<<<<< HEAD
     private Member[] members;
+=======
+>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
     private int count;
 //<<<<<<< HEAD
 //    private Member a = new Member();
@@ -173,6 +176,7 @@ public class Counter {
     }
 
     public void register() {
+<<<<<<< HEAD
         if(count<members.length){
             members[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
         }else {
@@ -184,6 +188,51 @@ public class Counter {
             }
         }
         
+=======
+        if(count<member.length){
+            member[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
+        }else expandMember();
+        if(count<member.length){
+            member[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
+
+            
+//        for(int i = 0;i<member.length;i++){
+//            if (member[i] == null){
+//                member[i] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
+//                break;
+//            }
+//        
+//        else{
+//                expandMember();
+//                member[i+ 1] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
+//                break;
+//                }
+            
+
+//        for (int i = 0; i < member.length; i++) {
+//            if (member[i] == null) {
+//                member[i] = new Member();
+//                member[i].register0(input);
+//                break;
+//            } else {
+//                expandMember();
+//                member[i + 1] = new Member();
+//                member[i + 1].register0(input);
+//                break;
+//            }
+//<<<<<<< HEAD
+//            if (member[i] != null) {
+//                Member[] member1 = new Member[i + 1];
+//                for (int j = 0; j < member1.length; i++) {
+//                    member1[i] = member[i];
+//
+//                }
+////                member1[i + 1].register0(input);
+////                member = member1;
+//
+//            }
+//=======
+>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
 
 //        for (int i = 0; i < member.length; i++) {
 //            if (member[i] == null) {
@@ -196,6 +245,7 @@ public class Counter {
 //                member[i + 1].register(input);
 //                break;
 //            }
+<<<<<<< HEAD
 ////<<<<<<< HEAD
 ////            if (member[i] != null) {
 ////                Member[] member1 = new Member[i + 1];
@@ -221,22 +271,31 @@ public class Counter {
 ////                
 ////            }
 ////>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
+=======
+//>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
+>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
 //        }
     }
-
-    public void expandMember() {
-        Member[] m = new Member[member.length + 1];
-        for (int i = 0; i < member.length; i++) {
-            m[i] = member[i];
-            
-        }
-        member = m;
     }
+    
+    public void expandMember() {
+        Member[] neoMember = new Member[member.length+1];
+        for (int i = 0; i< member.length;i++){
+            neoMember[i] = member[i];
+        }member=neoMember;
+    }
+//        Member[] m = new Member[member.length + 1];
+//        for (int i = 0; i < member.length; i++) {
+//            m[i] = member[i];
+//            
+//        }
+//        member = m;
+//    }
     
     public String showMembers(){
         String sm = "###Show members###";
         for(int i = 0 ; i < member.length; i++){
-            sm += "\n" + member[i];
+            sm += "\n" + member[i].toString();
         }
         return sm;
     }

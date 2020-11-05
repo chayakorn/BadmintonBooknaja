@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author Student
  */
 public class Member {
+<<<<<<< HEAD
     private  String name;
     private  String telnum;
     private Member[] members;
@@ -22,14 +23,26 @@ public class Member {
         this.name=name;
         this.telnum=telnum;
         this.members=new Member[100];
+=======
+
+    private String name;
+    private String telnum;
+
+    public Member(String name, String telnum) {
+        this.name = name;
+        this.telnum = telnum;
+>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
 
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public String getTelnum(){
+
+    public String getTelnum() {
         return telnum;
     }
+<<<<<<< HEAD
 //    public void register(Scanner input){
 //        
 //        if(count<members.length){
@@ -55,12 +68,18 @@ public class Member {
 //    public String getTelNumFromKeyboard(Scanner input){
 //        System.out.println("Input Tel: ");
 //        return input.next();
+=======
+//    public void register0(Scanner input){
+//        System.out.print("Input your Name : ");
+//        name = input.next();
+//        System.out.print("Input your Telnumber : ");
+//        telnum = input.next();
+>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
 //    }
 
     @Override
     public String toString() {
-        return "Name : " + name + "Tel : " + telnum +"\n";
+        return "Name : " + name + "\nTel : " + telnum;
     }
-    
-    
+
 }

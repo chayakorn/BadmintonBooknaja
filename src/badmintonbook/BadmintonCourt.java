@@ -6,6 +6,9 @@
 package badmintonbook;
 
 import java.util.Scanner;
+import java.time.Clock;
+import java.time.Instant;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -17,6 +20,8 @@ public class BadmintonCourt {
     private boolean bookStatus;
     private String name,CustomerName,TelCustomer;
     private Scanner input= new Scanner(System.in);
+    private LocalDateTime time;
+    private Clock clock;
 //    private StopWatch timer = new StopWatch();
 
 
@@ -49,6 +54,7 @@ public class BadmintonCourt {
             String tel = getTelNumberFromKeyboard(input);
             setName(name);
             setTel(tel);
+            time = LocalDateTime.now(clock);
         } else {
             System.out.println("This Court is Booked.");
         }
@@ -100,6 +106,10 @@ public class BadmintonCourt {
     
     public void setTel(String tel) {
         this.TelCustomer = tel;
+    }
+    public static void main(String[] args) {
+        Clock clock = Clock.system()
+        System.out.println(clock);
     }
 
     @Override

@@ -37,9 +37,9 @@ public class IncomeHistory {
     public String toString() {
         String p ="List of Income";
         for(int i = 0;i<count;i++){
-            p="/n"+history[i];
+            p+="\n"+history[i];
         }
-        return p;
+        return p+"\n\n"+getAllincome();
     }
     
 }

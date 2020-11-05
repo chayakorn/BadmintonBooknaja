@@ -25,11 +25,18 @@ public class BadmintonCourt {
     public boolean getBookStatus(){
         return bookStatus;
     }
-    public static String getCustomerName(){
+    public String getCustomerName(){
         return CustomerName;
     }
     public String getTelCustomer(){
         return TelCustomer;
+    }
+    public void setCustomerTel_Name(String telCustomer,String customerName){
+        this.CustomerName = customerName;
+        this.TelCustomer = telCustomer;
+    }
+    public void setBookStatus(boolean status){
+        this.bookStatus = status;
     }
     public boolean isBookStatusFull(){
         return bookStatus;
@@ -49,6 +56,7 @@ public class BadmintonCourt {
         }
 
     }
+    
     public void checkOutCourt(){
         if(bookStatus){
             bookStatus = false;

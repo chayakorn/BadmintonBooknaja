@@ -6,6 +6,7 @@
 package badmintonbook;
 
 import java.time.LocalTime;
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -16,9 +17,8 @@ public class Counter {
 
     private double MoneyInCounter;
     private int countCustomer = 0;
-    private int CourtCost = 100;
-    private double allIncome;
-    private double allIncomeever[] = new double[100];
+    private final int CourtCost = 100;
+    private IncomeHistory history;
     private Scanner input = new Scanner(System.in);
     private StopWatch timer = new StopWatch();
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
@@ -33,6 +33,8 @@ public class Counter {
 //=======
 //>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
     private int count;
+    private String nameCustomer;
+    private String telCustomer;
 //<<<<<<< HEAD
 //    private Member a = new Member();
 //=======
@@ -40,6 +42,8 @@ public class Counter {
 
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
+        this.history=new IncomeHistory(0);
+        
     }
 
     public void addMoney(double money) {
@@ -59,7 +63,9 @@ public class Counter {
             if (MoneyInCounter > change) {
                 book();
                 countCustomer++;
-                allIncome += price;
+                Income income = new Income(price,hrCustomer);
+                income.setNameTel(nameCustomer, telCustomer);
+                history.append(income);
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
             } else {
@@ -67,6 +73,30 @@ public class Counter {
             }
         }
     }
+    public void calculate4Member(Scanner input) {
+        System.out.print("Input Customer Hr : ");
+        int hrCustomer = input.nextInt();
+        System.out.print("Input Customer Money : ");
+        double moneyFromCustomer = input.nextDouble();
+        double price = hrCustomer * CourtCost;
+        if (price > moneyFromCustomer) {
+            System.out.print("Your Money not Enough.");
+        } else if (moneyFromCustomer >= price) {
+            double change = moneyFromCustomer - price;
+            if (MoneyInCounter > change) {
+                bookMember();
+                countCustomer++;
+                Income income = new Income(price,hrCustomer);
+                income.setNameTel(nameCustomer, telCustomer);
+                history.append(income);
+                System.out.println("Change:" + change);
+                System.out.println(getCourtStat());
+            } else {
+                System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
+            }
+        }
+    }
+    
 
     public void calculateMem(Scanner input) {
         System.out.print("Input Customer Hr : ");
@@ -95,26 +125,12 @@ public class Counter {
     }
 
     public double getAllIncome() {
-        return allIncome;
+        return history.getAllincome();
 
     }
 
     public int getCountCustomer() {
         return countCustomer;
-    }
-
-    public void Topoff() {
-        double[] allIncomeeverV_2 = new double[allIncomeever.length + 100];
-        for (int i = 0; i < allIncomeever.length; i++) {
-            if (i > allIncomeever.length) {
-                for (int k = 0; k < allIncomeeverV_2.length; k++) {
-                    allIncomeeverV_2[k] = allIncomeever[k];
-                }
-                allIncomeever = allIncomeeverV_2;
-            }
-
-            allIncomeever[i] = allIncome;
-        }
     }
 
     public void book() {
@@ -123,10 +139,21 @@ public class Counter {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourt();
                 court[i].toggleLight();
+                nameCustomer = court[i].getCustomerName();
+                telCustomer = court[i].getTelCustomer();
                 break;
 
             }
 
+        }
+    }
+    public void bookMember(){
+        for (int i = 0; i< court.length;i++){
+            if(court[i].getBookStatus()==false){
+                court[i].setBookStatus(true);
+                court[i].setCustomerTel_Name(nameCustomer, telCustomer);
+                break;
+            }
         }
     }
 
@@ -197,6 +224,7 @@ public class Counter {
 //>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
     }
 
+<<<<<<< HEAD
     public void login() {
         System.out.print("name :");
         String name = input.next();
@@ -232,6 +260,14 @@ public class Counter {
                     }
                     break;
             }
+=======
+    public boolean login() {
+        nameCustomer = input.next();
+        telCustomer=input.next();
+        for(int i = 0;i<member.length;i++){
+            if(nameCustomer.equals(member[i].getName()) && telCustomer.equals(member[i].getTelnum()))
+                return true;
+>>>>>>> 35637f83a56fc49966392172991a8bac7750d145
         }
 
     }
@@ -380,7 +416,7 @@ public class Counter {
 
     @Override
     public String toString() {
-        return "Counter{" + "MoneyInCounter=" + MoneyInCounter + ", countCustomer=" + countCustomer + ", allIncome=" + allIncome + ", input=" + input + '}';
+        return "Counter{" + "MoneyInCounter=" + MoneyInCounter + ", countCustomer=" + countCustomer + ", input=" + input + '}';
     }
 
     public static void main(String[] args) {

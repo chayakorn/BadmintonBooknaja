@@ -12,8 +12,8 @@ import java.util.Scanner;
  * @author Student
  */
 public class Member {
-    private static String name;
-    private static String telnum;
+    private String name;
+    private String telnum;
 
     
     public Member(){

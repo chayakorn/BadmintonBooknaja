@@ -23,7 +23,7 @@ public class Counter {
     private StopWatch timer = new StopWatch();
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private LocalTime time = LocalTime.now();
-    private static Member[] member = new Member[1];
+    private static Member[] member = new Member[2];
 //<<<<<<< HEAD
 //    private Member a = new Member();
 //=======

@@ -25,9 +25,12 @@ public class Counter {
     private LocalTime time = LocalTime.now();
     private static Member[] member = new Member[1];
 //<<<<<<< HEAD
-//    private Member[] members;
+////<<<<<<< HEAD
+////    private Member[] members;
+////=======
+////>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
 //=======
-//>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
+//>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
     private int count;
 //<<<<<<< HEAD
 //    private Member a = new Member();
@@ -171,30 +174,40 @@ public class Counter {
 //>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
     }
 
-    public void login() {
-        
+    public boolean login() {
+        String name = input.next();
+        String tel=input.next();
+        for(int i = 0;i<member.length;i++){
+            if(name.equals(member[i].getName()) && tel.equals(member[i].getTelnum()))
+                return true;
+        }
+        return false;
     }
 
     public void register() {
 //<<<<<<< HEAD
-//        if(count<members.length){
-//            members[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-//        }else {
-//            Member[] neoMember = new Member[members.length+100];
-//            for (int i = 0;i<members.length;i++){
-//                neoMember[i]=members[i];
-//                members=neoMember;
-//                members[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-//            }
-//        }
-//        
+////<<<<<<< HEAD
+////        if(count<members.length){
+////            members[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
+////        }else {
+////            Member[] neoMember = new Member[members.length+100];
+////            for (int i = 0;i<members.length;i++){
+////                neoMember[i]=members[i];
+////                members=neoMember;
+////                members[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
+////            }
+////        }
+////        
+////=======
 //=======
+//
+//>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
         if(count<member.length){
             member[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
         }else expandMember();
         if(count<member.length){
             member[count++] = new Member(getNameFromKeyboard(input),getTelNumberFromKeyboard(input));
-
+        }
             
 //        for(int i = 0;i<member.length;i++){
 //            if (member[i] == null){
@@ -232,7 +245,11 @@ public class Counter {
 //
 //            }
 //=======
-//>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
+//<<<<<<< HEAD
+////>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
+//=======
+//
+//>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
 
 //        for (int i = 0; i < member.length; i++) {
 //            if (member[i] == null) {
@@ -246,6 +263,10 @@ public class Counter {
 //                break;
 //            }
 //<<<<<<< HEAD
+////<<<<<<< HEAD
+//=======
+//
+//>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
 ////<<<<<<< HEAD
 ////            if (member[i] != null) {
 ////                Member[] member1 = new Member[i + 1];
@@ -271,11 +292,17 @@ public class Counter {
 ////                
 ////            }
 ////>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
+//<<<<<<< HEAD
+////=======
+////>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
+////>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
 //=======
-//>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
-//>>>>>>> d2b4a4fc42365b5cf7ae78cb549eaac32cc4ba8f
-//        }
-    }
+//
+////>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
+//
+//>>>>>>> fc4462349236a69ff72046d382286f59d31aa5f9
+////        }
+    
     }
     
     public void expandMember() {

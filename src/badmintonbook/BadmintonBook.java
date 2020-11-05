@@ -80,7 +80,17 @@ public class BadmintonBook {
 //                    break;
 //>>>>>>> 3da03fc1c322ae36a4c79a4c83dd77a714706343
 
+<<<<<<< HEAD
 //        } while (start != 0);
+=======
+                case 5:
+                    System.out.print(ct.showMembers());
+                    break;
+                case 6:
+                    ct.getHistory();
+            }
+        } while (selectMenu != 0);
+>>>>>>> 4716f2a429d4fc97f753e29318ea8d4970d8f521
 
     }
 }

@@ -103,7 +103,9 @@ public class Counter {
     public int getCountCustomer() {
         return countCustomer;
     }
-
+    public IncomeHistory getHistory(){
+        return history;
+    }
     public void book() {
 //        System.out.println(Arrays.toString(court));
         for (int i = 0; i < court.length; i++) {

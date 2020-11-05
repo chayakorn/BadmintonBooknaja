@@ -17,7 +17,7 @@ public class Member {
 
     
     public Member(){
-        
+
     }
     public String getName(){
         return name;
@@ -26,10 +26,16 @@ public class Member {
         return telnum;
     }
     public void register0(Scanner input){
-        System.out.println("Input your Name: ");
+        System.out.print("Input your Name : ");
         name = input.next();
-        System.out.println("Input your Telnumber: ");
+        System.out.print("Input your Telnumber : ");
         telnum = input.next();
     }
+
+    @Override
+    public String toString() {
+        return "Name : " + name + "Tel : " + telnum +"\n";
+    }
+    
     
 }

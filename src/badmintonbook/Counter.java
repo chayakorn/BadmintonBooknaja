@@ -23,7 +23,11 @@ public class Counter {
     private StopWatch timer = new StopWatch();
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private LocalTime time = LocalTime.now();
-    private Member[] member = new Member[1];
+    private static Member[] member = new Member[1];
+//<<<<<<< HEAD
+//    private Member a = new Member();
+//=======
+//>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
 
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
@@ -34,13 +38,13 @@ public class Counter {
     }
 
     public void calculate(Scanner input) {
-        System.out.println("Intput Customer Hr: ");
+        System.out.print("Input Customer Hr : ");
         int hrCustomer = input.nextInt();
-        System.out.println("Input Customer Money:");
+        System.out.print("Input Customer Money : ");
         double moneyFromCustomer = input.nextDouble();
         double price = hrCustomer * CourtCost;
         if (price > moneyFromCustomer) {
-            System.out.println("Your Money not Enough");
+            System.out.print("Your Money not Enough.");
         } else if (moneyFromCustomer >= price) {
             double change = moneyFromCustomer - price;
             if (MoneyInCounter > change) {
@@ -48,6 +52,7 @@ public class Counter {
                 countCustomer++;
                 allIncome += price;
                 System.out.println("Change:" + change);
+                System.out.println(getCourtStat());
             } else {
                 System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
             }
@@ -108,41 +113,61 @@ public class Counter {
             if (name.equals(court[i].getCustomerName()) && tel.equals(court[i].getTelCustomer())) {
                 court[i].checkOutCourt();
                 court[i].toggleLight();
+                System.out.println(getCourtStat());
                 break;
 
             }
-
+//<<<<<<< HEAD
+//            System.out.println("You didn't booked.");
+//=======
+//
+//>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
         }
 
     }
 
     public String getNameFromKeyboard(Scanner input) {
-        System.out.print("input Customer name:");
+        System.out.print("input Customer name : ");
         return input.nextLine();
     }
 
     public String getTelNumberFromKeyboard(Scanner input) {
-        System.out.print("input Customer Telephone Number:");
+        System.out.print("input Customer Telephone Number : ");
         return input.nextLine();
     }
 
     public String getCourtStat() {
-        return "Court 1:" + court[0].toString()
-                + " Court 2:" + court[1].toString()
-                + " Court 3:" + court[2].toString()
-                + " Court 4:" + court[3].toString()
-                + " Court 5:" + court[4].toString()
-                + " Court 6:" + court[5].toString()
-                + " Court 7:" + court[6].toString()
-                + " Court 8:" + court[7].toString()
-                + " Court 9:" + court[8].toString()
-                + " Court 10:" + court[9].toString()
-                + " Court 11:" + court[10].toString()
-                + " Court 12:" + court[11].toString();
+//<<<<<<< HEAD
+        return "\nCourt 1:" + court[0].toString()
+                + " \nCourt 2:" + court[1].toString()
+                + " \nCourt 3:" + court[2].toString()
+                + " \nCourt 4:" + court[3].toString()
+                + " \nCourt 5:" + court[4].toString()
+                + " \nCourt 6:" + court[5].toString()
+                + " \nCourt 7:" + court[6].toString()
+                + " \nCourt 8:" + court[7].toString()
+                + " \nCourt 9:" + court[8].toString()
+                + " \nCourt 10:" + court[9].toString()
+                + " \nCourt 11:" + court[10].toString()
+                + " \nCourt 12:" + court[11].toString();
+//=======
+//        return "Court 1:" + court[0].toString()
+//                + " Court 2:" + court[1].toString()
+//                + " Court 3:" + court[2].toString()
+//                + " Court 4:" + court[3].toString()
+//                + " Court 5:" + court[4].toString()
+//                + " Court 6:" + court[5].toString()
+//                + " Court 7:" + court[6].toString()
+//                + " Court 8:" + court[7].toString()
+//                + " Court 9:" + court[8].toString()
+//                + " Court 10:" + court[9].toString()
+//                + " Court 11:" + court[10].toString()
+//                + " Court 12:" + court[11].toString();
+//>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
     }
 
     public void login() {
-
+        
     }
 
     public void register() {
@@ -158,6 +183,18 @@ public class Counter {
                 member[i + 1].register0(input);
                 break;
             }
+//<<<<<<< HEAD
+//            if (member[i] != null) {
+//                Member[] member1 = new Member[i + 1];
+//                for (int j = 0; j < member1.length; i++) {
+//                    member1[i] = member[i];
+//
+//                }
+////                member1[i + 1].register0(input);
+////                member = member1;
+//
+//            }
+//=======
 
 //            if(member[i]!=null){
 ////                Member [] member1 = new Member[member.length+1];
@@ -170,6 +207,7 @@ public class Counter {
 //                
 //                
 //            }
+//>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
         }
     }
 
@@ -180,6 +218,14 @@ public class Counter {
             
         }
         member = m;
+    }
+    
+    public String showMembers(){
+        String sm = "###Show members###";
+        for(int i = 0 ; i < member.length; i++){
+            sm += "\n" + member[i];
+        }
+        return sm;
     }
 
     @Override
@@ -199,15 +245,26 @@ public class Counter {
         System.out.println(n.getCourtStat());
 
 //        n.addMoney(5000);
-//        System.out.println(n);
-//        n.calculate(a);
-//
-//        System.out.println(n.getCourtStat());
+        System.out.println(n);
+        n.calculate(a);
+
+        System.out.println(n.getCourtStat());
+        n.calculate(a);
+
+        System.out.println(n.getCourtStat());
+        n.calculate(a);
+
+        System.out.println(n.getCourtStat());
 //        n.checkOut();
 //        System.out.println(n.getCourtStat());
-        n.register();
-        n.register();
+//<<<<<<< HEAD
+////        n.register();
+//=======
+//        n.register();
+//        n.register();
+//>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
+//
+//    }
 
-    }
-
+}
 }

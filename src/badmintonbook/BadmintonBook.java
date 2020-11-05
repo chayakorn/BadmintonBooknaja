@@ -5,17 +5,65 @@
  */
 package badmintonbook;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Chayakorn
  */
 public class BadmintonBook {
 
-    /**
-     * @param args the command line arguments
-     */
+    private static int selectGuest;
+    private static int selectMenu;
+    private static String memTel;
+    private static String name;
+    private static String menu = "\n####Menu####" + "\n1.Book\n2.Checkout\n\n0.Back";
+    private static String mainMenu = "\n####Counter####\n\n1.Guest\n2.Member\n3.Register\n4.Check courts status\n5.Check Members\n\n0.Exit";
+
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        Counter ct = new Counter(10000);
+        
+        do {
+            System.out.println(mainMenu);
+            System.out.print("\nSelect menu : ");
+            selectMenu = sc.nextInt();
+
+            switch (selectMenu) {
+                case 1:
+                    System.out.println(menu);
+                    System.out.print("\nSelect menu : ");
+                    selectGuest = sc.nextInt();
+
+                    switch (selectGuest) {
+                        case 1:
+                            ct.calculate(sc);
+                            break;
+
+                        case 2:
+                            ct.checkOut();
+                            break;
+
+                    }
+
+                case 2:
+                    break;
+                case 3:
+                    ct.register();
+                    break;
+
+                case 4:
+                    System.out.print(ct.getCourtStat());
+                    break;
+
+                case 5:
+                    System.out.print(ct.showMembers());
+                    break;
+            }
+        } while (selectMenu != 0);
+
     }
-    
+
 }

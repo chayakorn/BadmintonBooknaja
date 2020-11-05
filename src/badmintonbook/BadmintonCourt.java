@@ -17,7 +17,7 @@ public class BadmintonCourt {
     private boolean bookStatus;
     private String name,CustomerName,TelCustomer;
     private Scanner input= new Scanner(System.in);
-    private StopWatch timer = new StopWatch();
+//    private StopWatch timer = new StopWatch();
 
 
     public BadmintonCourt(String name) {
@@ -45,16 +45,10 @@ public class BadmintonCourt {
     public void bookCourt() {
         if (!bookStatus) {
             bookStatus = true;
-<<<<<<< HEAD
-            CustomerName= getNameFromKeyboard(input);
-            TelCustomer = getTelNumberFromKeyboard(input);
-            timer.start();
-=======
             String name = getNameFromKeyboard(input);
             String tel = getTelNumberFromKeyboard(input);
             setName(name);
             setTel(tel);
->>>>>>> c350a747c68b4b35f3a19ca75853c3a8c60a9db2
         } else {
             System.out.println("This Court is Booked.");
         }
@@ -71,7 +65,7 @@ public class BadmintonCourt {
     
     public void checkOutCourt(){
         if(bookStatus){
-            timer.stop();
+//            timer.stop();
             bookStatus = false;
             CustomerName = null;
             TelCustomer = null;
@@ -81,14 +75,14 @@ public class BadmintonCourt {
         }
         
     }
-    public String getRemainingtime(int hr){
-        long t = timer.getElapsedTimeSecs();
-        if(t/60/60<hr){
-            long i =hr-t/60/60;
-        return "Your Ramainingtime:" + i;
-    }
-        return "Time out";
-    }
+//    public String getRemainingtime(int hr){
+//        long t = timer.getElapsedTimeSecs();
+//        if(t/60/60<hr){
+//            long i =hr-t/60/60;
+//        return "Your Ramainingtime:" + i;
+//    }
+//        return "Time out";
+//    }
 
     public String getNameFromKeyboard(Scanner input) {
         System.out.print("input Customer name : ");
@@ -110,7 +104,7 @@ public class BadmintonCourt {
 
     @Override
     public String toString() {
-        return "BadmintonCourt:" + "light:" + light + ", bookStatus:" + bookStatus  + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer ;
+        return "Light:" + light + ", bookStatus:" + bookStatus  + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer ;
     }
     
 }

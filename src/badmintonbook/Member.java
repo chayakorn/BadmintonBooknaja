@@ -12,12 +12,6 @@ import java.util.Scanner;
  * @author Student
  */
 public class Member {
-<<<<<<< HEAD
-    private  String name;
-    private  String telnum;
-    private  int points;
-=======
->>>>>>> c350a747c68b4b35f3a19ca75853c3a8c60a9db2
 
 
     private String name;
@@ -37,28 +31,10 @@ public class Member {
     public String getTelnum() {
         return telnum;
     }
-<<<<<<< HEAD
-    public int getPoints(){
-        return points;
-    }
-    public void register0(Scanner input){
-        System.out.println("Input your Name: ");
-        name = input.next();
-        System.out.println("Input your Telnumber: ");
-        telnum = input.next();
-    }
-    public void addPoints(int hr){
-        points+=hr*5;
+    public void setName(String name){
+        this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Member: " + name + ", Telnumber: " + telnum + ", Points:" + points;
-    }
-
-    
-    
-=======
 
 
 
@@ -67,5 +43,5 @@ public class Member {
         return "Memberstatus { Name: " + name + ", Tel: " + telnum +"}";
     }
 
->>>>>>> c350a747c68b4b35f3a19ca75853c3a8c60a9db2
+
 }

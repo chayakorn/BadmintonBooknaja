@@ -46,15 +46,15 @@ public class BadmintonBook {
                             ct.checkOut();
                             break;
 
-                    }
+                    
+                    }break;
 
                 case 2:
                     if(ct.login()==true){
                         ct.calculate4Member(sc);
-                    }
+                    }else System.out.println("");
                     break;
-                case 3:
-                    ct.register();
+                case 3:                    ct.register();
                     break;
                 case 4:
                     System.out.print(ct.getCourtStat());

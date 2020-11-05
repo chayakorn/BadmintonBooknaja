@@ -31,5 +31,11 @@ public class Member {
         System.out.print("Input your Telnumber : ");
         telnum = input.next();
     }
+
+    @Override
+    public String toString() {
+        return "Name : " + name + "Tel : " + telnum +"\n";
+    }
+    
     
 }

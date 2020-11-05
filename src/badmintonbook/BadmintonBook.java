@@ -18,14 +18,14 @@ public class BadmintonBook {
     private static String memTel;
     private static String name;
     private static String menu = "\n####Menu####" + "\n1.Book\n2.Checkout\n\n0.Back";
-    private static String mainMenu = "\n####Counter####\n\n1.Guest\n2.Member\n3.Register\n4.Check courts status\n\n0.Exit";
-    
+    private static String mainMenu = "\n####Counter####\n\n1.Guest\n2.Member\n3.Register\n4.Check courts status\n5.Check Members\n\n0.Exit";
+
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
 
         Counter ct = new Counter(10000);
-        Member m = new Member();
+        
         do {
             System.out.println(mainMenu);
             System.out.print("\nSelect menu : ");
@@ -50,15 +50,17 @@ public class BadmintonBook {
 
                 case 2:
                     break;
-                    
                 case 3:
                     ct.register();
                     break;
-                    
+
                 case 4:
                     System.out.print(ct.getCourtStat());
                     break;
 
+                case 5:
+                    System.out.print(ct.showMembers());
+                    break;
             }
         } while (selectMenu != 0);
 

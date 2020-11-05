@@ -23,11 +23,11 @@ public class Counter {
     private StopWatch timer = new StopWatch();
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private LocalTime time = LocalTime.now();
-    private Member[] member = new Member[1];
-<<<<<<< HEAD
-    private Member a = new Member();
-=======
->>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
+    private static Member[] member = new Member[1];
+//<<<<<<< HEAD
+//    private Member a = new Member();
+//=======
+//>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
 
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
@@ -117,11 +117,11 @@ public class Counter {
                 break;
 
             }
-<<<<<<< HEAD
-            System.out.println("You didn't booked.");
-=======
-
->>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
+//<<<<<<< HEAD
+//            System.out.println("You didn't booked.");
+//=======
+//
+//>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
         }
 
     }
@@ -137,7 +137,7 @@ public class Counter {
     }
 
     public String getCourtStat() {
-<<<<<<< HEAD
+//<<<<<<< HEAD
         return "\nCourt 1:" + court[0].toString()
                 + " \nCourt 2:" + court[1].toString()
                 + " \nCourt 3:" + court[2].toString()
@@ -150,24 +150,24 @@ public class Counter {
                 + " \nCourt 10:" + court[9].toString()
                 + " \nCourt 11:" + court[10].toString()
                 + " \nCourt 12:" + court[11].toString();
-=======
-        return "Court 1:" + court[0].toString()
-                + " Court 2:" + court[1].toString()
-                + " Court 3:" + court[2].toString()
-                + " Court 4:" + court[3].toString()
-                + " Court 5:" + court[4].toString()
-                + " Court 6:" + court[5].toString()
-                + " Court 7:" + court[6].toString()
-                + " Court 8:" + court[7].toString()
-                + " Court 9:" + court[8].toString()
-                + " Court 10:" + court[9].toString()
-                + " Court 11:" + court[10].toString()
-                + " Court 12:" + court[11].toString();
->>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
+//=======
+//        return "Court 1:" + court[0].toString()
+//                + " Court 2:" + court[1].toString()
+//                + " Court 3:" + court[2].toString()
+//                + " Court 4:" + court[3].toString()
+//                + " Court 5:" + court[4].toString()
+//                + " Court 6:" + court[5].toString()
+//                + " Court 7:" + court[6].toString()
+//                + " Court 8:" + court[7].toString()
+//                + " Court 9:" + court[8].toString()
+//                + " Court 10:" + court[9].toString()
+//                + " Court 11:" + court[10].toString()
+//                + " Court 12:" + court[11].toString();
+//>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
     }
 
     public void login() {
-
+        
     }
 
     public void register() {
@@ -183,18 +183,18 @@ public class Counter {
                 member[i + 1].register0(input);
                 break;
             }
-<<<<<<< HEAD
-            if (member[i] != null) {
-                Member[] member1 = new Member[i + 1];
-                for (int j = 0; j < member1.length; i++) {
-                    member1[i] = member[i];
-
-                }
-//                member1[i + 1].register0(input);
-//                member = member1;
-
-            }
-=======
+//<<<<<<< HEAD
+//            if (member[i] != null) {
+//                Member[] member1 = new Member[i + 1];
+//                for (int j = 0; j < member1.length; i++) {
+//                    member1[i] = member[i];
+//
+//                }
+////                member1[i + 1].register0(input);
+////                member = member1;
+//
+//            }
+//=======
 
 //            if(member[i]!=null){
 ////                Member [] member1 = new Member[member.length+1];
@@ -207,7 +207,7 @@ public class Counter {
 //                
 //                
 //            }
->>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
+//>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
         }
     }
 
@@ -218,6 +218,14 @@ public class Counter {
             
         }
         member = m;
+    }
+    
+    public String showMembers(){
+        String sm = "###Show members###";
+        for(int i = 0 ; i < member.length; i++){
+            sm += "\n" + member[i];
+        }
+        return sm;
     }
 
     @Override
@@ -249,13 +257,14 @@ public class Counter {
         System.out.println(n.getCourtStat());
 //        n.checkOut();
 //        System.out.println(n.getCourtStat());
-<<<<<<< HEAD
+//<<<<<<< HEAD
+////        n.register();
+//=======
 //        n.register();
-=======
-        n.register();
-        n.register();
->>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
+//        n.register();
+//>>>>>>> c83d74a0afa53026efca7b149f016e5635567c5d
+//
+//    }
 
-    }
-
+}
 }

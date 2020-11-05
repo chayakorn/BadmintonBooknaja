@@ -15,7 +15,7 @@ public class BadmintonCourt {
 
     private boolean light;
     private boolean bookStatus;
-    private String name,CustomerName,TelCustomer = null;
+    private static String name,CustomerName,TelCustomer = null;
     private Scanner input= new Scanner(System.in);
 
 
@@ -25,7 +25,7 @@ public class BadmintonCourt {
     public boolean getBookStatus(){
         return bookStatus;
     }
-    public String getCustomerName(){
+    public static String getCustomerName(){
         return CustomerName;
     }
     public String getTelCustomer(){

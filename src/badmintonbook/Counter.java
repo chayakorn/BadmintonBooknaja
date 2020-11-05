@@ -65,21 +65,43 @@ public class Counter {
             }
         }
     }
+    public void calculate4Member(Scanner input) {
+        System.out.print("Input Customer Hr : ");
+        int hrCustomer = input.nextInt();
+        System.out.print("Input Customer Money : ");
+        double moneyFromCustomer = input.nextDouble();
+        double price = hrCustomer * CourtCost;
+        if (price > moneyFromCustomer) {
+            System.out.print("Your Money not Enough.");
+        } else if (moneyFromCustomer >= price) {
+            double change = moneyFromCustomer - price;
+            if (MoneyInCounter > change) {
+                bookMember();
+                countCustomer++;
+                Income income = new Income(price,hrCustomer);
+                income.setNameTel(nameCustomer, telCustomer);
+                history.append(income);
+                System.out.println("Change:" + change);
+                System.out.println(getCourtStat());
+            } else {
+                System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
+            }
+        }
+    }
+    
 
     public double getMoneyInCounter() {
         return MoneyInCounter;
     }
 
     public double getAllIncome() {
-        return allIncome;
+        return history.getAllincome();
 
     }
 
     public int getCountCustomer() {
         return countCustomer;
     }
-
-
 
     public void book() {
 
@@ -93,6 +115,15 @@ public class Counter {
 
             }
 
+        }
+    }
+    public void bookMember(){
+        for (int i = 0; i< court.length;i++){
+            if(court[i].getBookStatus()==false){
+                court[i].setBookStatus(true);
+                court[i].setCustomerTel_Name(nameCustomer, telCustomer);
+                break;
+            }
         }
     }
 
@@ -164,10 +195,10 @@ public class Counter {
     }
 
     public boolean login() {
-        String name = input.next();
-        String tel=input.next();
+        nameCustomer = input.next();
+        telCustomer=input.next();
         for(int i = 0;i<member.length;i++){
-            if(name.equals(member[i].getName()) && tel.equals(member[i].getTelnum()))
+            if(nameCustomer.equals(member[i].getName()) && telCustomer.equals(member[i].getTelnum()))
                 return true;
         }
         return false;
@@ -288,7 +319,7 @@ public class Counter {
 
     @Override
     public String toString() {
-        return "Counter{" + "MoneyInCounter=" + MoneyInCounter + ", countCustomer=" + countCustomer + ", allIncome=" + allIncome + ", input=" + input + '}';
+        return "Counter{" + "MoneyInCounter=" + MoneyInCounter + ", countCustomer=" + countCustomer + ", input=" + input + '}';
     }
 
     public static void main(String[] args) {

@@ -249,7 +249,7 @@ public class Counter {
     public String showMembers(){
         String sm = "###Show members###";
         for(int i = 0 ; i < member.length; i++){
-            sm += "\n" + member[i].toString();
+            sm += "\n" + member[i];
         }
         return sm;
     }

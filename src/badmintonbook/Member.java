@@ -38,7 +38,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return "Name : " + name + "\nTel : " + telnum;
+        return "\nMembername : " + name + "\nmemberTel : " + telnum + "\n\n---------------------------------------";
     }
 
 }

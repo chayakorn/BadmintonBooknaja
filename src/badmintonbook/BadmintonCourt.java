@@ -38,6 +38,9 @@ public class BadmintonCourt {
     public void setBookStatus(boolean status){
         this.bookStatus = status;
     }
+    public void setLight(boolean status){
+        this.light=status;
+    }
     public boolean isBookStatusFull(){
         return bookStatus;
     }
@@ -80,7 +83,7 @@ public class BadmintonCourt {
 
     @Override
     public String toString() {
-        return "BadmintonCourt:" + "light:" + light + ", bookStatus:" + bookStatus + ", name:" + name + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer ;
+        return "BadmintonCourt:" + "light:" + light + ", bookStatus:" + bookStatus  + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer ;
     }
     
 }

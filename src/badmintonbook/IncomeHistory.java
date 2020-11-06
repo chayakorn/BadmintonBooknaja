@@ -11,7 +11,7 @@ package badmintonbook;
  */
 public class IncomeHistory {
     private final Income[] history;
-    private int count;
+    private int count=0;
     
     public IncomeHistory(int size){
         history = new Income[size>0 ? size:50];
@@ -20,7 +20,9 @@ public class IncomeHistory {
 
     public IncomeHistory append(Income earning){
         if(count<history.length){
-            history[count++] = earning;
+            
+            history[count] = earning;
+            count++;
             return this;
         }
         return null;

@@ -20,7 +20,7 @@ public class BadmintonBook {
     private static String menu = "\n####Menu####" + "\n1.Book\n\n0.Back";
     private static String mainMenu = "\n####Counter####\n\n1.Book as Guest\n2.Book as Member\n3.Register\n4.Checkout\n5.Check courts status\n6.Check Members\n7.History\n\n0.Exit";
     private static String startProg = "Do you want to started program?(Yes or No) : ";
-    private static int start;
+    private static String start;
 
     static Scanner sc = new Scanner(System.in);
 
@@ -28,11 +28,11 @@ public class BadmintonBook {
 
         Counter ct = new Counter(10000);
 
-        System.out.print("Do you want to started program? (Yes[1] or No[0]) : ");
-        start = sc.nextInt();
+        System.out.print("Do you want to started program? (Yes or No) : ");
+        start = sc.next().toLowerCase();
 
             switch (start) {
-                case 1:
+                case "yes":
                     do {
                         System.out.println(mainMenu);
                         System.out.print("\nSelect menu : ");

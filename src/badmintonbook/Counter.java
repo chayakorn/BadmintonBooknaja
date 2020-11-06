@@ -28,6 +28,8 @@ public class Counter {
     private int count;
     private String nameCustomer;
     private String telCustomer;
+    private String nameCourt;
+    private String telCourt;
 
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
@@ -52,7 +54,7 @@ public class Counter {
             if (MoneyInCounter > change) {
                 book();
                 countCustomer++;
-                Income income = new Income(price, hrCustomer,nameCustomer,telCustomer);
+                Income income = new Income(price, hrCustomer,nameCourt,telCourt);
 //                income.setNameTel(nameCustomer, telCustomer);
                 history.append(income);
                 System.out.println("Change:" + change);
@@ -109,6 +111,8 @@ public class Counter {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourt();
                 court[i].toggleLight();
+                nameCourt = court[i].getCustomerName();
+                telCourt = court[i].getTelCustomer();
                 break;
 
             }

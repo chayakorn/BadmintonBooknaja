@@ -20,7 +20,7 @@ public class BadmintonCourt {
     private boolean bookStatus;
     private String name,CustomerName,TelCustomer;
     private Scanner input= new Scanner(System.in);
-    private LocalDateTime time;
+    private LocalDateTime timeout;
     private Clock clock;
 //    private StopWatch timer = new StopWatch();
 
@@ -106,10 +106,13 @@ public class BadmintonCourt {
     public void setTel(String tel) {
         this.TelCustomer = tel;
     }
+    public void setTimeout(LocalDateTime t){
+        this.timeout = t;
+    }
 
     @Override
     public String toString() {
-        return "Light:" + light + ", bookStatus:" + bookStatus  + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer ;
+        return "Light:" + light + ", bookStatus:" + bookStatus  + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer + ", Timeout:"+timeout ;
     }
     
 }

@@ -5,6 +5,7 @@
  */
 package badmintonbook;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -22,9 +23,9 @@ public class Counter {
     private BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private static Member[] member = new Member[1];
     private String menuMem = "1.Book\n2.Checkout";
-    private int count;
-    private String nameCustomer;
-    private String telCustomer;
+    private int count,hrCustomer;
+    private String nameCustomer,telCustomer;
+    private LocalDateTime timeout = LocalDateTime.now();
 
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
@@ -38,7 +39,7 @@ public class Counter {
 
     public void calculate(Scanner input) {
         System.out.print("Input Customer Hr : ");
-        int hrCustomer = input.nextInt();
+        hrCustomer = input.nextInt();
         System.out.print("Input Customer Money : ");
         double moneyFromCustomer = input.nextDouble();
         double price = hrCustomer * CourtCost;
@@ -62,7 +63,7 @@ public class Counter {
 
     public void calculateForMember(Scanner input) {
         System.out.print("Input Customer Hr : ");
-        int hrCustomer = input.nextInt();
+        hrCustomer = input.nextInt();
         System.out.print("Input Customer Money : ");
         double moneyFromCustomer = input.nextDouble();
         double price = hrCustomer * CourtCost;
@@ -78,6 +79,7 @@ public class Counter {
                 history.append(income);
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
+                
             } else {
                 System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
             }
@@ -105,14 +107,10 @@ public class Counter {
         for (int i = 0; i < court.length; i++) {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourt();
-<<<<<<< HEAD
-                nameCustomer=court[i].getCustomerName();
-                telCustomer=court[i].getTelCustomer();
-=======
                 nameCustomer =court[i].getCustomerName();
                 telCustomer = court[i].getTelCustomer();
->>>>>>> eiei
                 court[i].toggleLight();
+                court[i].setTimeout(timeout.plusHours(hrCustomer));
                 break;
 
             }

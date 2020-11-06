@@ -63,30 +63,7 @@ public class BadmintonBook {
                             case 7:
                                 System.out.println(ct.getHistory());
                         }
-
-<<<<<<< HEAD
-                    
-                    }break;
-
-                case 2:
-                    if(ct.login()==true){
-                        ct.calculate4Member(sc);
-                    }else System.out.println("");
-                    break;
-                case 3:                    ct.register();
-                    break;
-                case 4:
-                    System.out.print(ct.getCourtStat());
-                    break;
-
-                case 5:
-                    System.out.print(ct.showMembers());
-                    break;
-                case 6:
-                    System.out.println(ct.getHistory());
-=======
                     } while (selectMenu != 0);
->>>>>>> eiei
             }
     }
 }

@@ -14,9 +14,11 @@ public class Income {
     private int hr;
     private String name;
     private String tel;
-    public Income(double income,int hr){
+    public Income(double income,int hr,String name,String tel){
         this.income = income;
         this.hr = hr;
+        this.name = name;
+        this.tel=tel;
     }
     public double getIncome(){
         return income;
@@ -31,7 +33,7 @@ public class Income {
 
     @Override
     public String toString() {
-        return "Contract/n"+name+"/n"+tel+"/nMoney: "+income+" : "+hr+" hr";
+        return "Contract\n"+name+"\n"+tel+"\nMoney: "+income+" : "+hr+" hr";
     }
     
 }

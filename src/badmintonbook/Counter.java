@@ -60,7 +60,7 @@ public class Counter {
         }
     }
 
-    public void calculate4Member(Scanner input) {
+    public void calculateForMember(Scanner input) {
         System.out.print("Input Customer Hr : ");
         int hrCustomer = input.nextInt();
         System.out.print("Input Customer Money : ");
@@ -96,19 +96,23 @@ public class Counter {
     public int getCountCustomer() {
         return countCustomer;
     }
-    public IncomeHistory getHistory(){
+
+    public IncomeHistory getHistory() {
         return history;
     }
+
     public void book() {
-        System.out.println(Arrays.toString(court));
         for (int i = 0; i < court.length; i++) {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourt();
+<<<<<<< HEAD
                 nameCustomer=court[i].getCustomerName();
                 telCustomer=court[i].getTelCustomer();
+=======
+                nameCustomer =court[i].getCustomerName();
+                telCustomer = court[i].getTelCustomer();
+>>>>>>> eiei
                 court[i].toggleLight();
-//                nameCustomer = court[i].getCustomerName();
-//                telCustomer = court[i].getTelCustomer();
                 break;
 
             }
@@ -118,14 +122,8 @@ public class Counter {
     public void bookMember() {
         for (int i = 0; i < court.length; i++) {
             if (court[i].getBookStatus() == false) {
-//                for(int j=0;j<count;j++){
-//                    if(telCustomer.equals(member[j].getTelnum()))
-//                        nameCustomer = member[j].getName();
-//                }
                 court[i].bookCourtmember(nameCustomer, telCustomer);
                 court[i].toggleLight();
-//                court[i].setCustomerName(nameCustomer);
-//                court[i].setCustomerTel(telCustomer);
                 break;
             }
         }
@@ -141,11 +139,9 @@ public class Counter {
                 court[i].toggleLight();
                 System.out.println(getCourtStat());
                 break;
-
             }
 
         }
-
     }
 
     public String getNameFromKeyboard(Scanner input) {
@@ -174,15 +170,19 @@ public class Counter {
     }
 
     public boolean login() {
-//        System.out.println("name :");
-//        nameCustomer = input.next();
-        System.out.println("tel :");
+        System.out.print("Tel: ");
         telCustomer = input.next();
         for (int i = 0; i < member.length; i++) {
+            if (member[0] == null) {
+                System.out.println("Didn't register.");
+                break;
+            }
             if (telCustomer.equals(member[i].getTelnum())) {
                 nameCustomer = member[i].getName();
                 telCustomer = member[i].getTelnum();
                 return true;
+            } else {
+                System.out.println("Tel Incorrect or didn't register.");
             }
         }
         return false;

@@ -20,7 +20,8 @@ public class IncomeHistory {
 
     public IncomeHistory append(Income earning){
         if(count<history.length){
-            history[count++]=earning;
+            history[count]=earning;
+            count++;
             return this;
         }
         return null;

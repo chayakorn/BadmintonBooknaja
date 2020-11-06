@@ -17,7 +17,11 @@ public class Income {
     public Income(double income,int hr,String name,String tel){
         this.income = income;
         this.hr = hr;
-        this.name = name;
+//<<<<<<< HEAD
+//        this.name = name;
+//=======
+        this.name=name;
+//>>>>>>> cfe8d017522243694af9ff9f9d415fe7f56f936c
         this.tel=tel;
     }
     public double getIncome(){
@@ -26,14 +30,10 @@ public class Income {
     public int getHr(){
         return hr;
     }
-    public void setNameTel(String name,String tel){
-        this.name = name;
-        this.tel = tel;
-    }
 
     @Override
     public String toString() {
-        return "Contract\n"+name+"\n"+tel+"\nMoney: "+income+" : "+hr+" hr";
+        return "Contract: {Name: "+name+",Tel: "+tel+",Money: "+income+",Hr: "+hr;
     }
     
 }

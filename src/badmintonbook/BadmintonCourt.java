@@ -54,7 +54,6 @@ public class BadmintonCourt {
             String tel = getTelNumberFromKeyboard(input);
             setName(name);
             setTel(tel);
-            time = LocalDateTime.now(clock);
         } else {
             System.out.println("This Court is Booked.");
         }
@@ -106,10 +105,6 @@ public class BadmintonCourt {
     
     public void setTel(String tel) {
         this.TelCustomer = tel;
-    }
-    public static void main(String[] args) {
-        Clock clock = Clock.system()
-        System.out.println(clock);
     }
 
     @Override

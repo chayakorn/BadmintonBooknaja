@@ -17,9 +17,9 @@ public class BadmintonBook {
     private static int selectMenu;
     private static String memTel;
     private static String name;
-    private static String menu = "\n####Menu####" + "\n1.Book\n\n0.Back";
-    private static String mainMenu = "\n####Counter####\n\n1.Book as Guest\n2.Book as Member\n3.Register\n4.Checkout\n5.Check courts status\n6.Check Members\n7.History\n\n0.Exit";
-    private static String startProg = "Do you want to started program?(Yes or No) : ";
+    private static final String menu = "\n####Menu####" + "\n1.Book\n\n0.Back";
+    private static final String mainMenu = "\n####Counter####\n\n1.Book as Guest\n2.Book as Member\n3.Register\n4.Checkout\n5.Check courts status\n6.Check Members\n7.History\n\n0.Exit";
+    private static final String startProg = "Do you want to started program?(Yes or No) : ";
     private static int start;
 
     static Scanner sc = new Scanner(System.in);

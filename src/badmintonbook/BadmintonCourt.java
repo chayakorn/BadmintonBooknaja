@@ -80,14 +80,6 @@ public class BadmintonCourt {
         }
         
     }
-//    public String getRemainingtime(int hr){
-//        long t = timer.getElapsedTimeSecs();
-//        if(t/60/60<hr){
-//            long i =hr-t/60/60;
-//        return "Your Ramainingtime:" + i;
-//    }
-//        return "Time out";
-//    }
 
     public String getNameFromKeyboard(Scanner input) {
         System.out.print("input Customer name : ");
@@ -112,7 +104,7 @@ public class BadmintonCourt {
 
     @Override
     public String toString() {
-        return "Light:" + light + ", bookStatus:" + bookStatus  + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer + ", Timeout:"+timeout ;
+        return "Light:" + light + ", bookStatus:" + bookStatus  + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer + ", Timeout: "+timeout ;
     }
     
 }

@@ -25,7 +25,7 @@ public class Counter {
     private final String menuMem = "1.Book\n2.Checkout";
     private int count,hrCustomer;
     private String nameCustomer,telCustomer;
-    private final LocalDateTime timeout = LocalDateTime.now();
+    private LocalDateTime timeout;
 
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
@@ -110,6 +110,7 @@ public class Counter {
                 nameCustomer =court[i].getCustomerName();
                 telCustomer = court[i].getTelCustomer();
                 court[i].toggleLight();
+                timeout = LocalDateTime.now();
                 court[i].setTimeout(timeout.plusHours(hrCustomer));
                 break;
 
@@ -122,6 +123,7 @@ public class Counter {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourtmember(nameCustomer, telCustomer);
                 court[i].toggleLight();
+                timeout = LocalDateTime.now();
                 court[i].setTimeout(timeout.plusHours(hrCustomer));
                 break;
             }

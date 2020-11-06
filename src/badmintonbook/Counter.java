@@ -52,8 +52,8 @@ public class Counter {
             if (MoneyInCounter > change) {
                 book();
                 countCustomer++;
-                Income income = new Income(price, hrCustomer);
-                income.setNameTel(nameCustomer, telCustomer);
+                Income income = new Income(price, hrCustomer, nameCustomer,telCustomer);
+//                income.setNameTel(nameCustomer, telCustomer);
                 history.append(income);
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
@@ -76,8 +76,8 @@ public class Counter {
             if (MoneyInCounter > change) {
                 bookMember();
                 countCustomer++;
-                Income income = new Income(price, hrCustomer);
-                income.setNameTel(nameCustomer, telCustomer);
+                Income income = new Income(price, hrCustomer,nameCustomer,telCustomer);
+//                income.setNameTel(nameCustomer, telCustomer);
                 history.append(income);
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
@@ -108,6 +108,8 @@ public class Counter {
         for (int i = 0; i < court.length; i++) {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourt();
+                nameCustomer =court[i].getCustomerName();
+                telCustomer = court[i].getTelCustomer();
                 court[i].toggleLight();
                 break;
 

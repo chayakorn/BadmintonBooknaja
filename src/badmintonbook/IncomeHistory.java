@@ -20,7 +20,8 @@ public class IncomeHistory {
 
     public IncomeHistory append(Income earning){
         if(count<history.length){
-            history[count++]=earning;
+            history[count]=earning;
+            count++;
             return this;
         }
         return null;
@@ -37,7 +38,7 @@ public class IncomeHistory {
     public String toString() {
         String p ="List of Income";
         for(int i = 0;i<count;i++){
-            p="/n"+history[i];
+            p+="\n"+history[i];
         }
         return p;
     }

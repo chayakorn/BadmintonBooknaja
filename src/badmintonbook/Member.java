@@ -13,14 +13,12 @@ import java.util.Scanner;
  */
 public class Member {
 
-
     private String name;
     private String telnum;
 
     public Member(String name, String telnum) {
         this.name = name;
         this.telnum = telnum;
-
 
     }
 
@@ -31,17 +29,14 @@ public class Member {
     public String getTelnum() {
         return telnum;
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
 
-
-
-
     @Override
     public String toString() {
-        return "Memberstatus { Name: " + name + ", Tel: " + telnum +"}";
+        return "Memberstatus { Name: " + name + ", Tel: " + telnum + "}";
     }
-
 
 }

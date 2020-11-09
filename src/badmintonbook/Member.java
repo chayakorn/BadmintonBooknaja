@@ -40,7 +40,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return "Memberstatus { Name: " + name + ", Tel: " + telnum +"}";
+        return "Memberstatus { Name: " + name + ", Telephone number: " + telnum +"}";
     }
 
 

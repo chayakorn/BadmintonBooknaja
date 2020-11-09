@@ -20,12 +20,7 @@ public class IncomeHistory {
 
     public IncomeHistory append(Income earning){
         if(count<history.length){
-//<<<<<<< HEAD
-//            
-//            history[count] = earning;
-//=======
             history[count]=earning;
-//>>>>>>> cfe8d017522243694af9ff9f9d415fe7f56f936c
             count++;
             return this;
         }
@@ -41,11 +36,11 @@ public class IncomeHistory {
 
     @Override
     public String toString() {
-        String p ="List of Income";
+        String p ="###List of Income###\n";
         for(int i = 0;i<count;i++){
             p+="\n"+history[i];
         }
-        return p+"\nTotal Earning: " + getAllincome();
+        return p+"\n\nTotal Earning: " + getAllincome();
     }
     
 }

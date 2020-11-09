@@ -44,7 +44,11 @@ public class BadmintonCourt {
         return bookStatus;
     }
     public void toggleLight() {
+        String on = "On";
+        String off= "Off";
         light = !light;
+        if(!light){;
+        }
     }
 
     public void bookCourt() {
@@ -64,7 +68,6 @@ public class BadmintonCourt {
             bookStatus = true;
             setName(name);
             setTel(tel);
-            
         }
     }
     
@@ -74,6 +77,7 @@ public class BadmintonCourt {
             bookStatus = false;
             CustomerName = null;
             TelCustomer = null;
+            timeout = null;
             
         }else {
             System.out.println("This Court is Checked out.");
@@ -87,7 +91,7 @@ public class BadmintonCourt {
     }
 
     public String getTelNumberFromKeyboard(Scanner input) {
-        System.out.print("input Customer Telephone Number : ");
+        System.out.print("input Customer Telephone number : ");
         return input.nextLine();
     }
     

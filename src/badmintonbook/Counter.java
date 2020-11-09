@@ -21,10 +21,11 @@ public class Counter {
     private final Scanner input = new Scanner(System.in);
     private final BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private static Member[] member = new Member[1];
+    private int count, hrCustomer;
+    private String nameCustomer, telCustomer;
     private final String menuMem = "1.Book\n2.Checkout";
-    private int count,hrCustomer;
-    private String nameCustomer,telCustomer;
     private LocalDateTime timeout;
+
 
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
@@ -37,7 +38,7 @@ public class Counter {
     }
 
     public void calculate(Scanner input) {
-        System.out.print("Input Customer Hr : ");
+        System.out.print("Input Customer Hours : ");
         hrCustomer = input.nextInt();
         System.out.print("Input Customer Money : ");
         double moneyFromCustomer = input.nextDouble();
@@ -49,8 +50,7 @@ public class Counter {
             if (MoneyInCounter > change) {
                 book();
                 countCustomer++;
-                Income income = new Income(price, hrCustomer, nameCustomer,telCustomer);
-//                income.setNameTel(nameCustomer, telCustomer);
+                Income income = new Income(price, hrCustomer, nameCustomer, telCustomer);
                 history.append(income);
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
@@ -61,7 +61,7 @@ public class Counter {
     }
 
     public void calculateForMember(Scanner input) {
-        System.out.print("Input Customer Hr : ");
+        System.out.print("Input Customer Hours : ");
         hrCustomer = input.nextInt();
         System.out.print("Input Customer Money : ");
         double moneyFromCustomer = input.nextDouble();
@@ -73,12 +73,12 @@ public class Counter {
             if (MoneyInCounter > change) {
                 bookMember();
                 countCustomer++;
-                Income income = new Income(price, hrCustomer,nameCustomer,telCustomer);
+                Income income = new Income(price, hrCustomer, nameCustomer, telCustomer);
 //                income.setNameTel(nameCustomer, telCustomer);
                 history.append(income);
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
-                
+
             } else {
                 System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
             }
@@ -106,7 +106,7 @@ public class Counter {
         for (int i = 0; i < court.length; i++) {
             if (court[i].getBookStatus() == false) {
                 court[i].bookCourt();
-                nameCustomer =court[i].getCustomerName();
+                nameCustomer = court[i].getCustomerName();
                 telCustomer = court[i].getTelCustomer();
                 court[i].toggleLight();
                 timeout = LocalDateTime.now();
@@ -150,7 +150,7 @@ public class Counter {
     }
 
     public String getTelNumberFromKeyboard(Scanner input) {
-        System.out.print("input Customer Telephone Number : ");
+        System.out.print("input Customer Telephone number : ");
         return input.next();
     }
 
@@ -170,20 +170,18 @@ public class Counter {
     }
 
     public boolean login() {
-        System.out.print("Tel: ");
+        System.out.print("Telephone number: ");
         telCustomer = input.next();
         for (int i = 0; i < member.length; i++) {
             if (member[0] == null) {
-                System.out.println("Didn't register.");
                 break;
             }
-            if (telCustomer.equals(member[i].getTelnum())) {
+            else if (telCustomer.equals(member[i].getTelnum())) {
                 nameCustomer = member[i].getName();
                 telCustomer = member[i].getTelnum();
                 return true;
-            } else {
-                System.out.println("Tel Incorrect or didn't register.");
             }
+
         }
         return false;
     }

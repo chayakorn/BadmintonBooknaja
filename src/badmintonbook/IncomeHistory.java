@@ -11,7 +11,7 @@ package badmintonbook;
  */
 public class IncomeHistory {
     private final Income[] history;
-    private int count;
+    private int count=0;
     
     public IncomeHistory(int size){
         history = new Income[size>0 ? size:50];
@@ -36,11 +36,11 @@ public class IncomeHistory {
 
     @Override
     public String toString() {
-        String p ="List of Income";
+        String p ="###List of Income###\n";
         for(int i = 0;i<count;i++){
             p+="\n"+history[i];
         }
-        return p+"\n\n"+getAllincome();
+        return p+"\n\nTotal Earning: " + getAllincome();
     }
     
 }

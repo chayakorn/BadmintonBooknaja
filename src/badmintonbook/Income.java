@@ -29,7 +29,7 @@ public class Income {
 
     @Override
     public String toString() {
-        return "Contract:\n"+name+"\n"+tel+"\nMoney: "+income+"Hr: "+hr;
+        return "Contract: { Name: "+name+", Telephone number: "+tel+", Money: "+income+", Times: "+hr+" Hours. }";
     }
     
 }

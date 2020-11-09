@@ -28,7 +28,7 @@ public class BadmintonBook {
 
         Counter ct = new Counter(10000);
 
-            System.out.print("Do you want to started program? (Yes or No) : ");g
+            System.out.print("Do you want to started program? (Yes or No) : ");
             start = sc.next().toLowerCase();
 
         switch (start) {

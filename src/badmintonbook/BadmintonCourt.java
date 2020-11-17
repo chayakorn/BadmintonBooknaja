@@ -16,9 +16,9 @@ import java.time.LocalDateTime;
  */
 public class BadmintonCourt {
     	
-    private boolean light;
-    private boolean bookStatus;
-    private String name,CustomerName,TelCustomer;
+    private boolean light; //variable status of light
+    private boolean bookStatus; //variable status of courtstatusbook
+    private String name,CustomerName,TelCustomer; // variable courtname,Customrename,numbercustomer
     private Scanner input= new Scanner(System.in);
     private LocalDateTime timeout;
     private Clock clock;

@@ -21,7 +21,7 @@ public class Counter {
     private final Scanner input = new Scanner(System.in);
     private final BadmintonCourt[] court = {new BadmintonCourt("1"), new BadmintonCourt("2"), new BadmintonCourt("3"), new BadmintonCourt("4"), new BadmintonCourt("5"), new BadmintonCourt("6"), new BadmintonCourt("7"), new BadmintonCourt("8"), new BadmintonCourt("9"), new BadmintonCourt("10"), new BadmintonCourt("11"), new BadmintonCourt("12")};
     private static Member[] member = new Member[1];
-    private int count, hrCustomer;
+    private int count, hrCustomer,points;
     private String nameCustomer, telCustomer;
     private final String menuMem = "1.Book\n2.Checkout";
     private LocalDateTime timeout;
@@ -76,6 +76,13 @@ public class Counter {
                 Income income = new Income(price, hrCustomer, nameCustomer, telCustomer);
 //                income.setNameTel(nameCustomer, telCustomer);
                 history.append(income);
+                for(int i  =0;i<member.length;i++){
+                    if(telCustomer.equals(member[i].getTelnum())){
+                        member[i].addPoints(hrCustomer);
+                        break;
+                    }
+                        }
+                
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
 
@@ -210,7 +217,7 @@ public class Counter {
 
         String sm = "###Show members###";
         for (int i = 0; i < member.length; i++) {
-            sm += "\n" + member[i];
+            sm += "\n" + member[i] + "Points: "+ member[i].getPoints();
         }
         return sm;
     }

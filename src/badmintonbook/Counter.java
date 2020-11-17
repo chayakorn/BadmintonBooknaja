@@ -37,6 +37,7 @@ public class Counter {
         MoneyInCounter += money;
     }
 
+
     public void calculate(Scanner input) {
         System.out.print("Input Customer Hours : ");
         hrCustomer = input.nextInt();

@@ -15,39 +15,44 @@ import java.time.LocalDateTime;
  * @author Chayakorn
  */
 public class BadmintonCourt {
-    	
+
     private boolean light;
     private boolean bookStatus;
-    private String name,CustomerName,TelCustomer;
-    private Scanner input= new Scanner(System.in);
+    private String name, CustomerName, TelCustomer;
+    private Scanner input = new Scanner(System.in);
     private LocalDateTime timeout;
     private Clock clock;
 //    private StopWatch timer = new StopWatch();
 
-
     public BadmintonCourt(String name) {
         this.name = name;
     }
-    public boolean getBookStatus(){
+
+    public boolean getBookStatus() {
         return bookStatus;
     }
-    public String getCustomerName(){
+
+    public String getCustomerName() {
         return CustomerName;
     }
-    public String getTelCustomer(){
+
+    public String getTelCustomer() {
         return TelCustomer;
     }
-    public void setBookStatus(boolean status){
+
+    public void setBookStatus(boolean status) {
         this.bookStatus = status;
     }
-    public boolean isBookStatusFull(){
+
+    public boolean isBookStatusFull() {
         return bookStatus;
     }
+
     public void toggleLight() {
         String on = "On";
-        String off= "Off";
+        String off = "Off";
         light = !light;
-        if(!light){;
+        if (!light) {;
         }
     }
 
@@ -63,26 +68,27 @@ public class BadmintonCourt {
         }
 
     }
-    public void bookCourtmember(String name, String tel){
-        if(!bookStatus){
+
+    public void bookCourtmember(String name, String tel) {
+        if (!bookStatus) {
             bookStatus = true;
             setName(name);
             setTel(tel);
         }
     }
-    
-    public void checkOutCourt(){
-        if(bookStatus){
+
+    public void checkOutCourt() {
+        if (bookStatus) {
 //            timer.stop();
             bookStatus = false;
             CustomerName = null;
             TelCustomer = null;
             timeout = null;
-            
-        }else {
+
+        } else {
             System.out.println("This Court is Checked out.");
         }
-        
+
     }
 
     public String getNameFromKeyboard(Scanner input) {
@@ -94,21 +100,28 @@ public class BadmintonCourt {
         System.out.print("input Customer Telephone number : ");
         return input.nextLine();
     }
-    
+
     public void setName(String name) {
         this.CustomerName = name;
     }
-    
+
     public void setTel(String tel) {
         this.TelCustomer = tel;
     }
-    public void setTimeout(LocalDateTime t){
+
+    public void setTimeout(LocalDateTime t) {
         this.timeout = t;
     }
 
     @Override
     public String toString() {
-        return "Light:" + light + ", bookStatus:" + bookStatus  + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer + ", Timeout: "+timeout ;
+
+        if (light == true) {
+            return "Light:" + "On" + ", Booked:" + "Yes" + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer + ", Timeout: " + timeout;
+        } else {
+            return "Light:" + "Off" + ", Booked:" + "No" + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer + ", Timeout: " + timeout;
+
+        }
     }
-    
+
 }

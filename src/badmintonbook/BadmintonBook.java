@@ -27,9 +27,15 @@ public class BadmintonBook {
     public static void main(String[] args) {
 
         Counter ct = new Counter(10000);
+        System.out.print("Do you want to started program? (Yes or No) : ");
+        start = sc.next().toLowerCase();
 
-            System.out.print("Do you want to started program? (Yes or No) : ");
-            start = sc.next().toLowerCase();
+        if ((!start.equals("yes")) && (!start.equals("no"))) {
+            do {
+                System.out.print("Do you want to started program? (Yes or No) : ");
+                start = sc.next().toLowerCase();
+            } while (((!start.equals("yes") || start.equals("no")) && (!start.equals("no") || start.equals("yes"))));
+        }
 
         switch (start) {
             case "yes":
@@ -46,10 +52,10 @@ public class BadmintonBook {
                         case 2:
                             if (ct.login() == true) {
                                 ct.calculateForMember(sc);
-                                
+
                             } else {
                                 System.out.println("Incorrect Tel or not register.");
-                                
+
                             }
                             break;
                         case 3:

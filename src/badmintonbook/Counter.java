@@ -158,8 +158,14 @@ public class Counter {
     }
 
     public String getTelNumberFromKeyboard(Scanner input) {
+        String ans;
+        do{
         System.out.print("input Customer Telephone number : ");
-        return input.next();
+        ans = input.next();
+        if(ans.length()!=10)
+                System.out.println("Please Try again..");}
+        while(ans.length()!=10);
+        return ans;
     }
 
     public String getCourtStat() {

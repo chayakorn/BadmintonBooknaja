@@ -46,7 +46,9 @@ public class BadmintonBook {
 
                     switch (selectMenu) {
                         case 1:
+                            
                             ct.calculate(sc);
+                            
                             break;
 
                         case 2:

@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18f8e419-51ca-454d-8544-74f4008a0815" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/build/classes/badmintonbook/Counter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/badmintonbook/Counter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/badmintonbook/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/badmintonbook/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectJ/badmintonbook/BadmintonCourt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectJ/badmintonbook/BadmintonCourt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectJ/badmintonbook/Counter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectJ/badmintonbook/Counter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectJ/badmintonbook/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectJ/badmintonbook/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/badmintonbook/BadmintonCourt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/badmintonbook/BadmintonCourt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/badmintonbook/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/badmintonbook/Counter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/badmintonbook/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/badmintonbook/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,22 +68,26 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="207" key="GridCell.Tab.0.bottom" timestamp="1605808978098">
+    <state x="479" y="311" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605809583831">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
-    <state width="1398" height="207" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1605808978098" />
-    <state width="1398" height="207" key="GridCell.Tab.0.center" timestamp="1605808978097">
+    <state x="479" y="311" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.25.1440.816@0.25.1440.816" timestamp="1605809583831" />
+    <state width="1398" height="207" key="GridCell.Tab.0.bottom" timestamp="1605809604796">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
-    <state width="1398" height="207" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1605808978097" />
-    <state width="1398" height="207" key="GridCell.Tab.0.left" timestamp="1605808978097">
+    <state width="1398" height="207" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1605809604796" />
+    <state width="1398" height="207" key="GridCell.Tab.0.center" timestamp="1605809604795">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
-    <state width="1398" height="207" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1605808978097" />
-    <state width="1398" height="207" key="GridCell.Tab.0.right" timestamp="1605808978098">
+    <state width="1398" height="207" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1605809604795" />
+    <state width="1398" height="207" key="GridCell.Tab.0.left" timestamp="1605809604795">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
-    <state width="1398" height="207" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1605808978098" />
+    <state width="1398" height="207" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1605809604795" />
+    <state width="1398" height="207" key="GridCell.Tab.0.right" timestamp="1605809604795">
+      <screen x="0" y="25" width="1440" height="816" />
+    </state>
+    <state width="1398" height="207" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1605809604795" />
     <state x="229" y="69" key="SettingsEditor" timestamp="1605606369572">
       <screen x="0" y="25" width="1440" height="816" />
     </state>

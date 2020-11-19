@@ -15,6 +15,7 @@ public class Member {
 
     private String name;
     private String telnum;
+    private int points;
 
     public Member(String name, String telnum) {
         this.name = name;
@@ -33,10 +34,18 @@ public class Member {
     public void setName(String name) {
         this.name = name;
     }
+    public void addPoints(int hr){
+        if(hr>2){
+            points+=hr*5;
+        }
+    }
+    public int getPoints(){
+        return points;
+    }
 
     @Override
     public String toString() {
-        return "Memberstatus { Name: " + name + ", Telephone number: " + telnum +"}";
+        return "Memberstatus { Name: " + name + ", Telephone number: " + telnum + ", Points: "+ points;
     }
 
 }

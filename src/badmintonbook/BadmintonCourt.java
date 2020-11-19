@@ -16,10 +16,11 @@ import java.time.LocalDateTime;
  */
 public class BadmintonCourt {
 
-    private boolean light;
-    private boolean bookStatus;
-    private String name, CustomerName, TelCustomer;
-    private Scanner input = new Scanner(System.in);
+    	
+    private boolean light; //variable status of light
+    private boolean bookStatus; //variable status of courtstatusbook
+    private String name,CustomerName,TelCustomer; // variable courtname,Customrename,numbercustomer
+    private Scanner input= new Scanner(System.in);
     private LocalDateTime timeout;
     private Clock clock;
 //    private StopWatch timer = new StopWatch();
@@ -49,11 +50,7 @@ public class BadmintonCourt {
     }
 
     public void toggleLight() {
-        String on = "On";
-        String off = "Off";
         light = !light;
-        if (!light) {;
-        }
     }
 
     public void bookCourt() {
@@ -115,13 +112,13 @@ public class BadmintonCourt {
 
     @Override
     public String toString() {
+            if (CustomerName == null) {
+                return "Light:" + "Off" + ", Booked:" + "No" + ", CustomerName:" + "none" + ", TelCustomer:" + "none" + ", Timeout: " + "none";
 
-        if (light == true) {
-            return "Light:" + "On" + ", Booked:" + "Yes" + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer + ", Timeout: " + timeout;
-        } else {
-            return "Light:" + "Off" + ", Booked:" + "No" + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer + ", Timeout: " + timeout;
+            } else {
+                return "Light:" + "On" + ", Booked:" + "Yes" + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer + ", Timeout: " + timeout;
 
-        }
+            }
     }
 
 }

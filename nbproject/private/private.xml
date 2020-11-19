@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+<<<<<<< HEAD
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/n11/Documents/NetBeansProjects/ProjectJ/src/badmintonbook/Income.java</file>
@@ -11,4 +12,6 @@
             <file>file:/Users/n11/Documents/NetBeansProjects/ProjectJ/src/badmintonbook/Counter.java</file>
         </group>
     </open-files>
+=======
+>>>>>>> 8e9eb664b14b4ce70a6665f9bbf034775f1c1bf1
 </project-private>

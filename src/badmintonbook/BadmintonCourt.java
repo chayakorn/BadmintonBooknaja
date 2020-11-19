@@ -98,7 +98,7 @@ public class BadmintonCourt {
         if(ans.length()!=10)
                 System.out.println("Please Try again.");}
         while(ans.length()!=10);
-        return input.nextLine();
+        return ans;
     }
     
     public void setName(String name) {

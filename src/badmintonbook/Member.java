@@ -45,7 +45,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return "Memberstatus { Name: " + name + ", Telephone number: " + telnum +"}";
+       return "Memberstatus { Name: " + name + ", Telephone number: " + telnum + ", Points: "+ points;
     }
 
 }

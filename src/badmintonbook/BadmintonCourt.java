@@ -91,7 +91,13 @@ public class BadmintonCourt {
     }
 
     public String getTelNumberFromKeyboard(Scanner input) {
+        String ans;
+        do{
         System.out.print("input Customer Telephone number : ");
+        ans = input.next();
+        if(ans.length()!=10)
+                System.out.println("Please Try again.");}
+        while(ans.length()!=10);
         return input.nextLine();
     }
     
@@ -108,7 +114,13 @@ public class BadmintonCourt {
 
     @Override
     public String toString() {
-        return "Light:" + light + ", bookStatus:" + bookStatus  + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer + ", Timeout: "+timeout ;
+        if (CustomerName == null) {
+                return "Light:" + "Off" + ", Booked:" + "No" + ", CustomerName:" + "none" + ", TelCustomer:" + "none" + ", Timeout: " + "none";
+
+            } else {
+                return "Light:" + "On" + ", Booked:" + "Yes" + ", CustomerName:" + CustomerName + ", TelCustomer:" + TelCustomer + ", Timeout: " + timeout;
+
+            }
     }
     
 }

@@ -55,7 +55,7 @@ public class Counter {
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
             } else {
-                System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
+                System.out.println("Sorry We don't have enough change");
             }
         }
     }
@@ -87,7 +87,7 @@ public class Counter {
                 System.out.println(getCourtStat());
 
             } else {
-                System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
+                System.out.println("Sorry We don't have enough change");
             }
         }
     }

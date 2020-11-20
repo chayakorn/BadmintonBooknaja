@@ -24,25 +24,57 @@ public class BadmintonCourt {
     private Clock clock;
 //    private StopWatch timer = new StopWatch();
 
-
+    /**
+     *
+     * @param name
+     */
     public BadmintonCourt(String name) {
         this.name = name;
     }
+
+    /**
+     *
+     * @return
+     */
     public boolean getBookStatus(){
         return bookStatus;
     }
+
+    /**
+     *
+     * @return
+     */
     public String getCustomerName(){
         return CustomerName;
     }
+
+    /**
+     *
+     * @return
+     */
     public String getTelCustomer(){
         return TelCustomer;
     }
+
+    /**
+     *
+     * @param status
+     */
     public void setBookStatus(boolean status){
         this.bookStatus = status;
     }
+
+    /**
+     *
+     * @return
+     */
     public boolean isBookStatusFull(){
         return bookStatus;
     }
+
+    /**
+     *
+     */
     public void toggleLight() {
         String on = "On";
         String off= "Off";
@@ -51,6 +83,9 @@ public class BadmintonCourt {
         }
     }
 
+    /**
+     *
+     */
     public void bookCourt() {
         if (!bookStatus) {
             bookStatus = true;
@@ -63,6 +98,12 @@ public class BadmintonCourt {
         }
 
     }
+
+    /**
+     *
+     * @param name
+     * @param tel
+     */
     public void bookCourtmember(String name, String tel){
         if(!bookStatus){
             bookStatus = true;
@@ -71,6 +112,9 @@ public class BadmintonCourt {
         }
     }
     
+    /**
+     *
+     */
     public void checkOutCourt(){
         if(bookStatus){
 //            timer.stop();
@@ -85,11 +129,21 @@ public class BadmintonCourt {
         
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     public String getNameFromKeyboard(Scanner input) {
         System.out.print("input Customer name : ");
         return input.nextLine();
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     public String getTelNumberFromKeyboard(Scanner input) {
         String ans;
         do{
@@ -101,13 +155,26 @@ public class BadmintonCourt {
         return ans;
     }
     
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.CustomerName = name;
     }
     
+    /**
+     *
+     * @param tel
+     */
     public void setTel(String tel) {
         this.TelCustomer = tel;
     }
+
+    /**
+     *
+     * @param t
+     */
     public void setTimeout(LocalDateTime t){
         this.timeout = t;
     }

@@ -26,17 +26,28 @@ public class Counter {
     private final String menuMem = "1.Book\n2.Checkout";
     private LocalDateTime timeout;
 
-
+    /**
+     *
+     * @param MoneyInCounter
+     */
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
         this.history = new IncomeHistory(0);
 
     }
 
+    /**
+     *
+     * @param money
+     */
     public void addMoney(double money) {
         MoneyInCounter += money;
     }
 
+    /**
+     *
+     * @param input
+     */
     public void calculate(Scanner input) {
         System.out.print("Input Customer Hours : ");
         hrCustomer = input.nextInt();
@@ -55,11 +66,15 @@ public class Counter {
                 System.out.println("Change:" + change);
                 System.out.println(getCourtStat());
             } else {
-                System.out.println("Sorry We don't have enough change");
+                System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
             }
         }
     }
 
+    /**
+     *
+     * @param input
+     */
     public void calculateForMember(Scanner input) {
         System.out.print("Input Customer Hours : ");
         hrCustomer = input.nextInt();
@@ -87,28 +102,47 @@ public class Counter {
                 System.out.println(getCourtStat());
 
             } else {
-                System.out.println("Sorry We don't have enough change");
+                System.out.println("Sorry We don't have enough change 💪( ͡❛ 👅 ͡❛҂)");
             }
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public double getMoneyInCounter() {
         return MoneyInCounter;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getAllIncome() {
         return history.getAllincome();
 
     }
 
+    /**
+     *
+     * @return
+     */
     public int getCountCustomer() {
         return countCustomer;
     }
 
+    /**
+     *
+     * @return
+     */
     public IncomeHistory getHistory() {
         return history;
     }
 
+    /**
+     *
+     */
     public void book() {
         for (int i = 0; i < court.length; i++) {
             if (court[i].getBookStatus() == false) {
@@ -124,6 +158,9 @@ public class Counter {
         }
     }
 
+    /**
+     *
+     */
     public void bookMember() {
         for (int i = 0; i < court.length; i++) {
             if (court[i].getBookStatus() == false) {
@@ -136,6 +173,9 @@ public class Counter {
         }
     }
 
+    /**
+     *
+     */
     public void checkOut() {
         String name = getNameFromKeyboard(input);
         String tel = getTelNumberFromKeyboard(input);
@@ -151,11 +191,21 @@ public class Counter {
         }
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     public String getNameFromKeyboard(Scanner input) {
         System.out.print("input Customer name : ");
         return input.next();
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     public String getTelNumberFromKeyboard(Scanner input) {
         String ans;
         do{
@@ -167,6 +217,10 @@ public class Counter {
         return ans;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCourtStat() {
         return "\nCourt 1:" + court[0].toString()
                 + " \nCourt 2:" + court[1].toString()
@@ -182,6 +236,10 @@ public class Counter {
                 + " \nCourt 12:" + court[11].toString();
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean login() {
         System.out.print("Telephone number: ");
         telCustomer = input.next();
@@ -199,6 +257,9 @@ public class Counter {
         return false;
     }
 
+    /**
+     *
+     */
     public void register() {
 
         if (count < member.length) {
@@ -211,6 +272,9 @@ public class Counter {
         }
     }
 
+    /**
+     *
+     */
     public void expandMember() {
         Member[] neoMember = new Member[member.length + 1];
         for (int i = 0; i < member.length; i++) {
@@ -219,6 +283,10 @@ public class Counter {
         member = neoMember;
     }
 
+    /**
+     *
+     * @return
+     */
     public String showMembers() {
 
         String sm = "###Show members###";

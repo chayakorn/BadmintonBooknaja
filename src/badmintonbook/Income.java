@@ -14,15 +14,33 @@ public class Income {
     private int hr;
     private String name;
     private String tel;
+
+    /**
+     *
+     * @param income
+     * @param hr
+     * @param name
+     * @param tel
+     */
     public Income(double income,int hr,String name,String tel){
         this.income = income;
         this.hr = hr;
         this.name=name;
         this.tel=tel;
     }
+
+    /**
+     *
+     * @return
+     */
     public double getIncome(){
         return income;
     }
+
+    /**
+     *
+     * @return
+     */
     public int getHr(){
         return hr;
     }

@@ -13,11 +13,20 @@ public class IncomeHistory {
     private final Income[] history;
     private int count=0;
     
+    /**
+     *
+     * @param size
+     */
     public IncomeHistory(int size){
         history = new Income[size>0 ? size:50];
         
     }
 
+    /**
+     *
+     * @param earning
+     * @return
+     */
     public IncomeHistory append(Income earning){
         if(count<history.length){
             history[count]=earning;
@@ -26,6 +35,11 @@ public class IncomeHistory {
         }
         return null;
     }
+
+    /**
+     *
+     * @return
+     */
     public double getAllincome(){
         double allIncome = 0;
         for(int i = 0 ;i<count;i++){

@@ -22,10 +22,9 @@ public class BadmintonCourt {
     private Scanner input= new Scanner(System.in);
     private LocalDateTime timeout;
     private Clock clock;
-//    private StopWatch timer = new StopWatch();
 
     /**
-     *
+     * Creates a new BadmintonCourt with the given name.
      * @param name
      */
     public BadmintonCourt(String name) {
@@ -33,7 +32,7 @@ public class BadmintonCourt {
     }
 
     /**
-     *
+     * Get the StatusCourt.
      * @return
      */
     public boolean getBookStatus(){
@@ -41,7 +40,7 @@ public class BadmintonCourt {
     }
 
     /**
-     *
+     * Get the name of Customer.
      * @return
      */
     public String getCustomerName(){
@@ -49,7 +48,7 @@ public class BadmintonCourt {
     }
 
     /**
-     *
+     * Get the Customer Telnumber.
      * @return
      */
     public String getTelCustomer(){
@@ -57,15 +56,15 @@ public class BadmintonCourt {
     }
 
     /**
-     *
-     * @param status
+     * Changes the Status of court 
+     * @param status This new Status Should include the old status.
      */
     public void setBookStatus(boolean status){
         this.bookStatus = status;
     }
 
     /**
-     *
+     * Get Status of the court.
      * @return
      */
     public boolean isBookStatusFull(){
@@ -73,7 +72,7 @@ public class BadmintonCourt {
     }
 
     /**
-     *
+     * This method use to Switch light On/Off.
      */
     public void toggleLight() {
         String on = "On";
@@ -84,7 +83,7 @@ public class BadmintonCourt {
     }
 
     /**
-     *
+     * If this court available. This method will change status of court to booked and set Customer name&tel as input from keyboard else this method will print This court is booked.
      */
     public void bookCourt() {
         if (!bookStatus) {

@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package badmintonbook;
+package badmintonbook.System;
 
+import badmintonbook.component.BadmintonCourt;
+import badmintonbook.component.Member;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package badmintonbook;
+package badmintonbook.main;
 
+import badmintonbook.System.Counter;
 import java.util.Scanner;
 
 /**

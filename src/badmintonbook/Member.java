@@ -8,7 +8,7 @@ package badmintonbook;
 import java.util.Scanner;
 
 /**
- *
+ * This class is Member.
  * @author Student
  */
 public class Member {
@@ -18,7 +18,7 @@ public class Member {
     private int points;
 
     /**
-     *
+     * Create a member with name&telnumber.
      * @param name
      * @param telnum
      */
@@ -29,32 +29,32 @@ public class Member {
     }
 
     /**
-     *
-     * @return
+     * Get name of member.
+     * @return Name of member.
      */
     public String getName() {
         return name;
     }
 
     /**
-     *
-     * @return
+     * Get tel number of member.
+     * @return Tel number of member.
      */
     public String getTelnum() {
         return telnum;
     }
 
     /**
-     *
-     * @param name
+     * Change name of member.
+     * @param name This will include old name member.
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     *
-     * @param hr
+     * This method will add points for member.
+     * @param hr Hour of member booked.
      */
     public void addPoints(int hr){
         if(hr>2){
@@ -63,8 +63,8 @@ public class Member {
     }
 
     /**
-     *
-     * @return
+     * Get points of member.
+     * @return Points of member.
      */
     public int getPoints(){
         return points;

@@ -25,7 +25,7 @@ public class BadmintonBook {
     static Scanner sc = new Scanner(System.in);
 
     /**
-     *
+     * Main menu
      * @param args
      */
     public static void main(String[] args) {

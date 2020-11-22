@@ -6,7 +6,7 @@
 package badmintonbook;
 
 /**
- *
+ * This class is History of income.
  * @author Student
  */
 public class IncomeHistory {
@@ -14,8 +14,8 @@ public class IncomeHistory {
     private int count=0;
     
     /**
-     *
-     * @param size
+     * Create history of income with size. if size equal 0 will set history size equal 50.
+     * @param size Size of history income.
      */
     public IncomeHistory(int size){
         history = new Income[size>0 ? size:50];
@@ -23,9 +23,9 @@ public class IncomeHistory {
     }
 
     /**
-     *
-     * @param earning
-     * @return
+     * Receive income and keep in history.
+     * @param earning Income of customer.
+     * @return History with earning.
      */
     public IncomeHistory append(Income earning){
         if(count<history.length){
@@ -37,8 +37,8 @@ public class IncomeHistory {
     }
 
     /**
-     *
-     * @return
+     * Get all income.
+     * @return All income.
      */
     public double getAllincome(){
         double allIncome = 0;

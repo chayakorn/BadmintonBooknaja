@@ -6,7 +6,7 @@
 package badmintonbook;
 
 /**
- *
+ * This class is income from customer.
  * @author Student
  */
 public class Income {
@@ -16,11 +16,11 @@ public class Income {
     private String tel;
 
     /**
-     *
-     * @param income
-     * @param hr
-     * @param name
-     * @param tel
+     * Create a new Income history with income customer name&tel and hour customer book.
+     * @param income Income from customer.
+     * @param hr Hour customer book.
+     * @param name Name of customer.
+     * @param tel Tel of customer.
      */
     public Income(double income,int hr,String name,String tel){
         this.income = income;
@@ -30,7 +30,7 @@ public class Income {
     }
 
     /**
-     *
+     * Get the income.
      * @return
      */
     public double getIncome(){
@@ -38,7 +38,7 @@ public class Income {
     }
 
     /**
-     *
+     * Get hour of customer book.
      * @return
      */
     public int getHr(){

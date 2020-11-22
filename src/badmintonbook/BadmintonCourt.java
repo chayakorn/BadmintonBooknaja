@@ -11,7 +11,7 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 
 /**
- *
+ * This class is BadmintonCourt.
  * @author Chayakorn
  */
 public class BadmintonCourt {
@@ -33,7 +33,7 @@ public class BadmintonCourt {
 
     /**
      * Get the StatusCourt.
-     * @return
+     * @return Status of court.
      */
     public boolean getBookStatus(){
         return bookStatus;
@@ -41,7 +41,7 @@ public class BadmintonCourt {
 
     /**
      * Get the name of Customer.
-     * @return
+     * @return Name of Customer.
      */
     public String getCustomerName(){
         return CustomerName;
@@ -49,7 +49,7 @@ public class BadmintonCourt {
 
     /**
      * Get the Customer Telnumber.
-     * @return
+     * @return Tel of Customer.
      */
     public String getTelCustomer(){
         return TelCustomer;
@@ -65,7 +65,7 @@ public class BadmintonCourt {
 
     /**
      * Get Status of the court.
-     * @return
+     * @return Status of court
      */
     public boolean isBookStatusFull(){
         return bookStatus;
@@ -99,9 +99,9 @@ public class BadmintonCourt {
     }
 
     /**
-     *
-     * @param name
-     * @param tel
+     *If this court available. This method will change status of court to  booked and set Customer name&tel as Customer name&tel from member list. 
+     * @param name This name will include Customer name.
+     * @param tel This name will include Customer tel.
      */
     public void bookCourtmember(String name, String tel){
         if(!bookStatus){
@@ -112,11 +112,10 @@ public class BadmintonCourt {
     }
     
     /**
-     *
+     * Checkout court everything in this court will reset to default. 
      */
     public void checkOutCourt(){
         if(bookStatus){
-//            timer.stop();
             bookStatus = false;
             CustomerName = null;
             TelCustomer = null;
@@ -129,9 +128,9 @@ public class BadmintonCourt {
     }
 
     /**
-     *
-     * @param input
-     * @return
+     * Get Customer name from keyboard.
+     * @param input This input will give name Customer from keyboard.
+     * @return Name of Customer.
      */
     public String getNameFromKeyboard(Scanner input) {
         System.out.print("input Customer name : ");
@@ -139,8 +138,8 @@ public class BadmintonCourt {
     }
 
     /**
-     *
-     * @param input
+     * Get Customer tel from keyboard.
+     * @param input This input will give tel Customer from keyboard.
      * @return
      */
     public String getTelNumberFromKeyboard(Scanner input) {
@@ -155,24 +154,24 @@ public class BadmintonCourt {
     }
     
     /**
-     *
-     * @param name
+     * Change Customer name of this court.
+     * @param name This name will include old Customer name.
      */
     public void setName(String name) {
         this.CustomerName = name;
     }
     
     /**
-     *
-     * @param tel
+     * Change Customer tel of this court.
+     * @param tel This tel will include old Customer tel.
      */
     public void setTel(String tel) {
         this.TelCustomer = tel;
     }
 
     /**
-     *
-     * @param t
+     * Set time out of court.
+     * @param t t will be Timeout of this court.
      */
     public void setTimeout(LocalDateTime t){
         this.timeout = t;

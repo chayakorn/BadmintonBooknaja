@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 /**
- *
+ * This class is counter service.
  * @author Chayakorn
  */
 public class Counter {
@@ -23,12 +23,11 @@ public class Counter {
     private static Member[] member = new Member[1];
     private int count, hrCustomer,points;
     private String nameCustomer, telCustomer;
-    private final String menuMem = "1.Book\n2.Checkout";
     private LocalDateTime timeout;
 
     /**
-     *
-     * @param MoneyInCounter
+     * Create a new Counter with the given money in this counter and set history of income as 0. 
+     * @param MoneyInCounter will be money in this counter.
      */
     public Counter(double MoneyInCounter) {
         this.MoneyInCounter = MoneyInCounter;
@@ -37,16 +36,16 @@ public class Counter {
     }
 
     /**
-     *
-     * @param money
+     * This method will add money in counter.
+     * @param money This money will plus old money in counter.
      */
     public void addMoney(double money) {
         MoneyInCounter += money;
     }
 
     /**
-     *
-     * @param input
+     * This method will ask user for hour to use badminton court and ask for money from customer. If price more than money from customer cancel this queue. Else if money from customer more or equal price this method will book court and give change and create income history .Else cancel queue.
+     * @param input This will ask for hour and money from customer.
      */
     public void calculate(Scanner input) {
         System.out.print("Input Customer Hours : ");
@@ -72,8 +71,8 @@ public class Counter {
     }
 
     /**
-     *
-     * @param input
+     * This method will active after login member and will ask user for hour to use badminton court and ask for money from customer. If price more than money from customer cancel this queue. Else if money from customer more or equal price this method will book court for member and give change and create income history and give points to customer.Else cancel queue.
+     * @param input This will ask for hour and money from customer.
      */
     public void calculateForMember(Scanner input) {
         System.out.print("Input Customer Hours : ");
@@ -108,7 +107,7 @@ public class Counter {
     }
 
     /**
-     *
+     * Get money in counter.
      * @return
      */
     public double getMoneyInCounter() {
@@ -116,16 +115,7 @@ public class Counter {
     }
 
     /**
-     *
-     * @return
-     */
-    public double getAllIncome() {
-        return history.getAllincome();
-
-    }
-
-    /**
-     *
+     * Get quantity of customer.
      * @return
      */
     public int getCountCustomer() {
@@ -133,7 +123,7 @@ public class Counter {
     }
 
     /**
-     *
+     * Get income history.
      * @return
      */
     public IncomeHistory getHistory() {
@@ -141,7 +131,7 @@ public class Counter {
     }
 
     /**
-     *
+     * This method will check every badminton court if court is available will set court booked and set name&tel customer to this court and turn on light and set time out with time now plus hour customer.
      */
     public void book() {
         for (int i = 0; i < court.length; i++) {
@@ -159,7 +149,7 @@ public class Counter {
     }
 
     /**
-     *
+     * This method will check e very badminton court if court is available will set court booked and set name%tel customer from member list to this court and turn on light and set time out with time now plus hour customer.
      */
     public void bookMember() {
         for (int i = 0; i < court.length; i++) {
@@ -174,7 +164,7 @@ public class Counter {
     }
 
     /**
-     *
+     * This method will ask for name%tel Customer use to check court if name%tel equal as court this method will checkout court and turn off the light and show status of every court. 
      */
     public void checkOut() {
         String name = getNameFromKeyboard(input);
@@ -192,9 +182,9 @@ public class Counter {
     }
 
     /**
-     *
-     * @param input
-     * @return
+     * Get customer name from keyboard.
+     * @param input This will ask for customer name.
+     * @return Customer name.
      */
     public String getNameFromKeyboard(Scanner input) {
         System.out.print("input Customer name : ");
@@ -202,9 +192,9 @@ public class Counter {
     }
 
     /**
-     *
-     * @param input
-     * @return
+     * Get Name of customer from keyboard.
+     * @param input This input will get customer name from keyboard.
+     * @return Customer tel.
      */
     public String getTelNumberFromKeyboard(Scanner input) {
         String ans;
@@ -218,8 +208,8 @@ public class Counter {
     }
 
     /**
-     *
-     * @return
+     * Get every court status.
+     * @return Status of every court.
      */
     public String getCourtStat() {
         return "\nCourt 1:" + court[0].toString()
@@ -237,8 +227,8 @@ public class Counter {
     }
 
     /**
-     *
-     * @return
+     * login member if tel number equal member.
+     * @return Status login.
      */
     public boolean login() {
         System.out.print("Telephone number: ");
@@ -258,7 +248,7 @@ public class Counter {
     }
 
     /**
-     *
+     * This method will get name&tel from customer to create a new member.if member list full this method will use expand member list and create a new member.
      */
     public void register() {
 
@@ -273,7 +263,7 @@ public class Counter {
     }
 
     /**
-     *
+     * Expand member list.
      */
     public void expandMember() {
         Member[] neoMember = new Member[member.length + 1];
@@ -284,7 +274,7 @@ public class Counter {
     }
 
     /**
-     *
+     * Show every member.
      * @return
      */
     public String showMembers() {

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"badmintonbook.main","l":"BadmintonBook"},{"p":"badmintonbook.component","l":"BadmintonCourt"},{"p":"badmintonbook.System","l":"Counter"},{"p":"badmintonbook.System","l":"Income"},{"p":"badmintonbook.System","l":"IncomeHistory"},{"p":"badmintonbook.component","l":"Member"}]

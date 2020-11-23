@@ -140,7 +140,7 @@ public class BadmintonCourt {
     /**
      * Get Customer tel from keyboard.
      * @param input This input will give tel Customer from keyboard.
-     * @return
+     * @return ans
      */
     public String getTelNumberFromKeyboard(Scanner input) {
         String ans;

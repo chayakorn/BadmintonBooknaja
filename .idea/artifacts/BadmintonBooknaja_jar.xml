@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BadmintonBooknaja:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BadmintonBooknaja_jar</output-path>
+    <root id="archive" name="BadmintonBooknaja.jar">
+      <element id="module-output" name="BadmintonBooknaja" />
+    </root>
+  </artifact>
+</component>
